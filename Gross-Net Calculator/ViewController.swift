@@ -18,6 +18,10 @@ class ViewController: NSViewController {
         net.doubleValue = (gross.doubleValue / 1.27).rounded()
     }
     
+
+    @IBAction func netToGross(_ sender: AnyObject) {
+        gross.doubleValue = net.doubleValue + net.doubleValue * 0.27
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
