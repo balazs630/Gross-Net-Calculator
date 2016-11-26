@@ -12,15 +12,16 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var gross: NSTextField!
     @IBOutlet weak var net: NSTextField!
-    
-    
-    @IBAction func grossToNet(_ sender: AnyObject) {
-        net.doubleValue = (gross.doubleValue / 1.27).rounded()
-    }
-    
+    @IBOutlet weak var vat: NSTextField!
 
-    @IBAction func netToGross(_ sender: AnyObject) {
-        gross.doubleValue = net.doubleValue + net.doubleValue * 0.27
+    @IBAction func grossToNet(_ sender: Any) {
+        net.doubleValue = (gross.doubleValue / 1.27).rounded()
+        vat.doubleValue = gross.doubleValue - net.doubleValue
+    }
+
+    @IBAction func netToGross(_ sender: Any) {
+        gross.doubleValue = (net.doubleValue * 1.27).rounded()
+        vat.doubleValue = gross.doubleValue - net.doubleValue
     }
     
     override func viewDidLoad() {
