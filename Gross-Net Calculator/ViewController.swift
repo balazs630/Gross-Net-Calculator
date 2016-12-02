@@ -10,9 +10,9 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var gross: NSTextField!
-    @IBOutlet weak var net: NSTextField!
-    @IBOutlet weak var vat: NSTextField!
+    @IBOutlet weak private var gross: NSTextField!
+    @IBOutlet weak private var net: NSTextField!
+    @IBOutlet weak private var vat: NSTextField!
 
     @IBAction func grossToNet(_ sender: Any) {
         net.doubleValue = (gross.doubleValue / 1.27).rounded()
