@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="386" y="261"/>
         </scene>
-        <!--View Controller-->
+        <!--Gross-Net Calculator-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Gross-Net Calculator" id="XfG-lQ-9wD" customClass="ViewController" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="370" height="205"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -167,58 +167,58 @@
             </objects>
             <point key="canvasLocation" x="20" y="621.5"/>
         </scene>
-        <!--Preferences Menu-->
+        <!--Preferences-->
         <scene sceneID="jB7-z3-ZAf">
             <objects>
-                <viewController id="chL-9t-6R6" customClass="PreferencesMenu" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preferences" id="chL-9t-6R6" customClass="PreferencesMenu" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9zg-tY-w9T">
-                        <rect key="frame" x="0.0" y="0.0" width="370" height="205"/>
+                        <rect key="frame" x="0.0" y="0.0" width="319" height="203"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPo-Op-pjk">
-                                <rect key="frame" x="48" y="146" width="78" height="26"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPo-Op-pjk">
+                                <rect key="frame" x="28" y="149" width="78" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="VAT rate:" id="xQl-Yc-0fa">
-                                    <font key="font" metaFont="system" size="18"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-Mn-HDL">
-                                <rect key="frame" x="48" y="99" width="88" height="26"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-Mn-HDL">
+                                <rect key="frame" x="28" y="106" width="88" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Currency: " id="ZDj-ia-b8t">
-                                    <font key="font" metaFont="system" size="18"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-S6-hgW">
-                                <rect key="frame" x="143" y="103" width="47" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-S6-hgW">
+                                <rect key="frame" x="107" y="112" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="Ft" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="YaS-hg-ela">
+                                <buttonCell key="cell" type="radio" title="Ft" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="YaS-hg-ela">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="15"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
-                            <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-Tp-Kwv">
-                                <rect key="frame" x="143" y="72" width="47" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-Tp-Kwv">
+                                <rect key="frame" x="107" y="81" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="€" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="fzi-qV-2p6">
+                                <buttonCell key="cell" type="radio" title="€" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="fzi-qV-2p6">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="15"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
-                            <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDf-Gb-Zjm">
-                                <rect key="frame" x="143" y="42" width="47" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDf-Gb-Zjm">
+                                <rect key="frame" x="107" y="51" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="$" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Mwu-lW-Gyn">
+                                <buttonCell key="cell" type="radio" title="$" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="Mwu-lW-Gyn">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system" size="15"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-7p-Q74">
-                                <rect key="frame" x="140" y="145" width="59" height="27"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-7p-Q74">
+                                <rect key="frame" x="101" y="150" width="59" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Nqy-Rr-hco">
                                     <font key="font" metaFont="system" size="16"/>
@@ -226,24 +226,35 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-Lz-qjE">
-                                <rect key="frame" x="203" y="145" width="29" height="26"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRb-Lz-qjE">
+                                <rect key="frame" x="166" y="149" width="29" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="%" id="0JD-XF-WTi">
-                                    <font key="font" metaFont="system" size="18"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ova-cN-2G6">
+                                <rect key="frame" x="233" y="13" width="72" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mnm-4U-xHE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="doneButton:" target="chL-9t-6R6" id="jva-sm-6qB"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="vatRate" destination="LlD-7p-Q74" id="ylU-lB-Kxc"/>
+                        <outlet property="vatRate" destination="LlD-7p-Q74" id="tsx-kK-ILE"/>
                     </connections>
                 </viewController>
                 <customObject id="kgK-uG-2h9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="622"/>
+            <point key="canvasLocation" x="422.5" y="620.5"/>
         </scene>
     </scenes>
 </document>

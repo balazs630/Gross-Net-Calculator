@@ -9,10 +9,18 @@
 
 import Cocoa
 
+
 class PreferencesMenu: NSViewController {
     
     @IBOutlet weak var vatRate: NSTextField!
-    @IBOutlet weak var currency: NSTextField!
-
     
+    
+    @IBAction func doneButton(_ sender: Any) {
+        self.view.window?.close()
+    }
+    
+    override func viewDidAppear() {
+        vatRate.stringValue = "27"
+    }
+
 }
