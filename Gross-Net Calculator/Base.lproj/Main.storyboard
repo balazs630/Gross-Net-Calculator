@@ -196,26 +196,35 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-S6-hgW">
                                 <rect key="frame" x="107" y="112" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="Ft" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="YaS-hg-ela">
+                                <buttonCell key="cell" type="radio" title="Ft" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="YaS-hg-ela">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="chooseCurrency:" target="chL-9t-6R6" id="haC-IJ-YEy"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-Tp-Kwv">
                                 <rect key="frame" x="107" y="81" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="€" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="fzi-qV-2p6">
+                                <buttonCell key="cell" type="radio" title="€" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="fzi-qV-2p6">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="chooseCurrency:" target="chL-9t-6R6" id="0k1-s5-NRD"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDf-Gb-Zjm">
                                 <rect key="frame" x="107" y="51" width="47" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="$" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="Mwu-lW-Gyn">
+                                <buttonCell key="cell" type="radio" title="$" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Mwu-lW-Gyn">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="chooseCurrency:" target="chL-9t-6R6" id="1fY-kO-BgU"/>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-7p-Q74">
                                 <rect key="frame" x="101" y="150" width="59" height="27"/>
@@ -249,6 +258,9 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="radioButtonDollar" destination="sDf-Gb-Zjm" id="dtC-st-3mw"/>
+                        <outlet property="radioButtonEuro" destination="aBf-Tp-Kwv" id="Ukv-pJ-wIv"/>
+                        <outlet property="radioButtonFt" destination="iW0-S6-hgW" id="MZl-uJ-FrI"/>
                         <outlet property="vatRate" destination="LlD-7p-Q74" id="tsx-kK-ILE"/>
                     </connections>
                 </viewController>
