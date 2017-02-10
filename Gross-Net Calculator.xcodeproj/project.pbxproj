@@ -56,9 +56,9 @@
 			children = (
 				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
 				ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */,
+				ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */,
 				ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */,
 				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
-				ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */,
 				ACE7DCE41DB621C6005D3E9F /* Info.plist */,
 			);
 			path = "Gross-Net Calculator";

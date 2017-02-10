@@ -26,9 +26,7 @@ class PreferencesMenu: NSViewController {
     
     @IBAction func doneButton(_ sender: Any) {
         let enteredVatValue = Int(vatRate.stringValue)
-        if enteredVatValue == nil {
-            
-        } else {
+        if enteredVatValue != nil {
             prefs.set(vatRate.stringValue, forKey: "vatRate")
         }
         
@@ -65,3 +63,16 @@ class PreferencesMenu: NSViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
