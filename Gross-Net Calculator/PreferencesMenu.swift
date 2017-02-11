@@ -10,22 +10,23 @@
 import Cocoa
 
 
-class PreferencesMenu: NSViewController {
+class PreferencesMenu: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet weak var vatRate: NSTextField!
+    @IBOutlet weak var notNumberWarningLabel: NSTextField!
     @IBOutlet weak var radioButtonFt: NSButton!
     @IBOutlet weak var radioButtonEuro: NSButton!
     @IBOutlet weak var radioButtonDollar: NSButton!
     
     var prefs: UserDefaults = UserDefaults.standard
     
-    @IBAction func chooseCurrency(_ sender: NSButton) {
+    @IBAction func currencySelected(_ sender: NSButton) {
         prefs.set(sender.title, forKey: "currency")
         prefs.synchronize()
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        let enteredVatValue = Int(vatRate.stringValue)
+        let enteredVatValue = Double(vatRate.stringValue)
         if enteredVatValue != nil {
             prefs.set(vatRate.stringValue, forKey: "vatRate")
         }
@@ -42,6 +43,15 @@ class PreferencesMenu: NSViewController {
             radioButtonFt.state = 1
         }
         prefs.synchronize()
+    }
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        let enteredVatValue = Double(vatRate.stringValue)
+        if enteredVatValue == nil {
+            notNumberWarningLabel.stringValue = "Given value\n is not a number!"
+        } else {
+            notNumberWarningLabel.stringValue = ""
+        }
     }
     
     override func viewDidAppear() {

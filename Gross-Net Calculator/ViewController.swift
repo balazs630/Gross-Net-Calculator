@@ -19,14 +19,17 @@ class ViewController: NSViewController {
     @IBOutlet weak var currencyLabel3: NSTextField!
     
     var prefs: UserDefaults = UserDefaults.standard
-
+    var vatRateMultiplier: Double {
+        return 1 + prefs.double(forKey: "vatRate") / 100
+    }
+    
     @IBAction func grossToNet(_ sender: Any) {
-        net.doubleValue = (gross.doubleValue / (1 + prefs.double(forKey: "vatRate") / 100)).rounded()
+        net.doubleValue = (gross.doubleValue / vatRateMultiplier).rounded()
         calculateVat()
     }
 
     @IBAction func netToGross(_ sender: Any) {
-        gross.doubleValue = (net.doubleValue * (1 + prefs.double(forKey: "vatRate") / 100)).rounded()
+        gross.doubleValue = (net.doubleValue * vatRateMultiplier).rounded()
         calculateVat()
     }
     
@@ -40,25 +43,18 @@ class ViewController: NSViewController {
         currencyLabel3.stringValue = currencyLabel1.stringValue
     }
     
-    @IBAction func labelChanged(_ sender: NSTextField) {
-        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
-    }
-    
     override func viewDidAppear() {
         updateLabels()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-            
         // Update the view, if already loaded.
-            
         }
         
     }
