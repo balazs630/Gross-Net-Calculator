@@ -10,33 +10,57 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var gross: NSTextField!
-    @IBOutlet weak var net: NSTextField!
-    @IBOutlet weak var vat: NSTextField!
-
+    @IBOutlet weak private var gross: NSTextField!
+    @IBOutlet weak private var net: NSTextField!
+    @IBOutlet weak private var vat: NSTextField!
+    
+    @IBOutlet weak var currencyLabel1: NSTextField!
+    @IBOutlet weak var currencyLabel2: NSTextField!
+    @IBOutlet weak var currencyLabel3: NSTextField!
+    
+    var prefs: UserDefaults = UserDefaults.standard
+    var vatRateMultiplier: Double {
+        return 1 + prefs.double(forKey: "vatRate") / 100
+    }
+    
     @IBAction func grossToNet(_ sender: Any) {
-        net.doubleValue = (gross.doubleValue / 1.27).rounded()
-        vat.doubleValue = gross.doubleValue - net.doubleValue
+        net.doubleValue = (gross.doubleValue / vatRateMultiplier).rounded()
+        calculateVat()
     }
 
     @IBAction func netToGross(_ sender: Any) {
-        gross.doubleValue = (net.doubleValue * 1.27).rounded()
+        gross.doubleValue = (net.doubleValue * vatRateMultiplier).rounded()
+        calculateVat()
+    }
+    
+    func calculateVat() {
         vat.doubleValue = gross.doubleValue - net.doubleValue
+    }
+    
+    func updateLabels() {
+        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
+        currencyLabel2.stringValue = currencyLabel1.stringValue
+        currencyLabel3.stringValue = currencyLabel1.stringValue
+    }
+    
+    override func viewDidAppear() {
+        updateLabels()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(forName: CURRENCY_UPDATE_NOTIFICATION, object: nil, queue: nil) {
+        Notification in self.updateLabels()
+        }
         // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-            
         // Update the view, if already loaded.
-            
         }
+        
     }
-
+    
 }
-
