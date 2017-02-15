@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3F8E591E551DE500492154 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3F8E581E551DE500492154 /* Constants.swift */; };
 		ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */; };
 		ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */; };
 		ACE7DCE01DB621C6005D3E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */; };
 		ACE7DCE31DB621C6005D3E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCE11DB621C6005D3E9F /* Main.storyboard */; };
+		ACFB6B4F1DEA2FFE00DECFB7 /* PreferencesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC3F8E581E551DE500492154 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gross-Net Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE7DCE21DB621C6005D3E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACE7DCE41DB621C6005D3E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
 				ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */,
+				AC3F8E581E551DE500492154 /* Constants.swift */,
+				ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */,
 				ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */,
 				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
 				ACE7DCE41DB621C6005D3E9F /* Info.plist */,
@@ -88,7 +94,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Horváth Balázs";
 				TargetAttributes = {
 					ACE7DCD71DB621C5005D3E9F = {
@@ -134,6 +140,8 @@
 			files = (
 				ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */,
 				ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */,
+				ACFB6B4F1DEA2FFE00DECFB7 /* PreferencesMenu.swift in Sources */,
+				AC3F8E591E551DE500492154 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +177,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -218,6 +227,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
