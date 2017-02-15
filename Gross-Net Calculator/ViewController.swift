@@ -49,6 +49,10 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: CURRENCY_UPDATE_NOTIFICATION, object: nil, queue: nil) {
+        Notification in self.updateLabels()
+        }
         // Do any additional setup after loading the view.
     }
 

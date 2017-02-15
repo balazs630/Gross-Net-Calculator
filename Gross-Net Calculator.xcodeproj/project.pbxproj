@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3F8E591E551DE500492154 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3F8E581E551DE500492154 /* Constants.swift */; };
 		ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */; };
 		ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */; };
 		ACE7DCE01DB621C6005D3E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC3F8E581E551DE500492154 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gross-Net Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
 				ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */,
+				AC3F8E581E551DE500492154 /* Constants.swift */,
 				ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */,
 				ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */,
 				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
@@ -138,6 +141,7 @@
 				ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */,
 				ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */,
 				ACFB6B4F1DEA2FFE00DECFB7 /* PreferencesMenu.swift in Sources */,
+				AC3F8E591E551DE500492154 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

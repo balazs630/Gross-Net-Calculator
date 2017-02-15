@@ -6,7 +6,6 @@
 //  Copyright © 2016. Horváth Balázs. All rights reserved.
 //
 
-
 import Cocoa
 
 
@@ -29,9 +28,9 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
         let enteredVatValue = Double(vatRate.stringValue)
         if enteredVatValue != nil {
             prefs.set(vatRate.stringValue, forKey: "vatRate")
+            prefs.synchronize()
         }
-        
-        prefs.synchronize()
+        NotificationCenter.default.post(name: CURRENCY_UPDATE_NOTIFICATION, object: nil)
         self.view.window?.close()
     }
     
