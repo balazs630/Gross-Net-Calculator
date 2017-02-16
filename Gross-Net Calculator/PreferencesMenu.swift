@@ -30,7 +30,7 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
             prefs.set(vatRate.stringValue, forKey: "vatRate")
             prefs.synchronize()
         }
-        NotificationCenter.default.post(name: CURRENCY_UPDATE_NOTIFICATION, object: nil)
+        NotificationCenter.default.post(name: LABEL_REFRESH, object: nil)
         self.view.window?.close()
     }
     
