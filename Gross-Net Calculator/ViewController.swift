@@ -45,6 +45,7 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         updateLabels()
+        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
     }
     
     override func viewDidLoad() {

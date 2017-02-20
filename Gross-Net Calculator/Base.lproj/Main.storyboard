@@ -25,7 +25,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <segue destination="chL-9t-6R6" kind="show" id="awL-Kp-gPz"/>
+                                                <segue destination="jhU-Ll-6Px" kind="show" id="lg8-th-mV3"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -58,7 +58,50 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Gross_Net_Calculator" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="261"/>
+            <point key="canvasLocation" x="422" y="-7"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="j3W-20-MzQ">
+            <objects>
+                <windowController id="jhU-Ll-6Px" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="O7M-go-wmy">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="474" y="426" width="326" height="135"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1129"/>
+                        <toolbar key="toolbar" implicitIdentifier="F2377ABF-9C5C-49F3-AA9B-DFAA326A3931" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="PhM-l5-chl">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Cg5-xV-gjz"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="oWL-9r-Y9v"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="9JX-T3-DFx"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Xke-TD-c4w"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="3Cn-Re-2r5"/>
+                                <toolbarItem implicitItemIdentifier="269C03B5-62E2-4EC1-AA69-BFF89BF053F6" label="General" paletteLabel="General" image="General_32px" id="0p1-hn-jba">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <button key="view" id="git-1I-Qni">
+                                        <rect key="frame" x="8" y="14" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="General_32px" imagePosition="above" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="w2k-3g-EDd">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="0p1-hn-jba"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <segue destination="chL-9t-6R6" kind="relationship" relationship="window.shadowedContentViewController" id="Fid-Ga-9i6"/>
+                    </connections>
+                </windowController>
+                <customObject id="hvj-A0-rby" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="298"/>
         </scene>
         <!--Gross-Net Calculator-->
         <scene sceneID="hIz-AP-VOD">
@@ -235,7 +278,7 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-7p-Q74">
                                 <rect key="frame" x="101" y="150" width="59" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Nqy-Rr-hco">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Nqy-Rr-hco">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -288,4 +331,7 @@
             <point key="canvasLocation" x="422.5" y="620.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="General_32px" width="32" height="32"/>
+    </resources>
 </document>

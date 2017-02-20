@@ -67,7 +67,8 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
         default:
             NSLog("Unexpected currency was selected")
         }
-
+        
+        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
         vatRate.stringValue = prefs.string(forKey: "vatRate")!
     }
 
