@@ -21,7 +21,9 @@ class NumberValueFormatter: NumberFormatter {
     
     override init() {
         super.init()
-        self.numberStyle = .decimal
+        //self.numberStyle = .decimal
+        self.groupingSeparator = " "
+        self.maximumIntegerDigits = 10
     }
     
     required init?(coder aDecoder: NSCoder) {

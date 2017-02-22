@@ -76,14 +76,14 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="9JX-T3-DFx"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Xke-TD-c4w"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="3Cn-Re-2r5"/>
-                                <toolbarItem implicitItemIdentifier="269C03B5-62E2-4EC1-AA69-BFF89BF053F6" label="General" paletteLabel="General" image="General" id="0p1-hn-jba">
+                                <toolbarItem implicitItemIdentifier="5494A005-6327-46E6-B8BB-1804A36C51B5" label="General" paletteLabel="General" image="General" id="iHu-G6-Lzv">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="32" height="32"/>
-                                    <size key="maxSize" width="32" height="32"/>
-                                    <button key="view" id="git-1I-Qni">
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="HPS-0b-i3a">
                                         <rect key="frame" x="8" y="14" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="General" imagePosition="above" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="w2k-3g-EDd">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="General" imagePosition="only" alignment="center" alternateImage="General" imageScaling="proportionallyUpOrDown" inset="2" id="UlD-Rx-2e9">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -91,7 +91,7 @@
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="0p1-hn-jba"/>
+                                <toolbarItem reference="iHu-G6-Lzv"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -111,16 +111,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="370" height="205"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FY3-JR-OFM">
+                            <textField identifier="grossTextField" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FY3-JR-OFM">
                                 <rect key="frame" x="119" y="144" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="gfj-cT-fmu">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="grossTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="gfj-cT-fmu">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="grossToNet:" target="XfG-lQ-9wD" id="ZLh-TD-vUv"/>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="Zlg-ZK-vAn"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-2P-ap2">
@@ -132,16 +132,16 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhN-LU-omy">
+                            <textField identifier="netTextField" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhN-LU-omy">
                                 <rect key="frame" x="119" y="96" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="7js-We-6k5">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="netTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="7js-We-6k5">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="netToGross:" target="XfG-lQ-9wD" id="65T-gA-bZe"/>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="TkE-1l-qUT"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54D-mc-nbk">
@@ -165,11 +165,14 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKD-5H-Pga">
                                 <rect key="frame" x="171" y="48" width="105" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="SBo-6z-3VG">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="vatTextField" drawsBackground="YES" usesSingleLineMode="YES" id="SBo-6z-3VG">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="JsP-mr-oqY"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BdI-uM-zXy">
                                 <rect key="frame" x="282" y="50" width="25" height="22"/>
@@ -222,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPo-Op-pjk">
-                                <rect key="frame" x="28" y="149" width="78" height="26"/>
+                                <rect key="frame" x="33" y="149" width="78" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="VAT rate:" id="xQl-Yc-0fa">
                                     <font key="font" metaFont="system" size="14"/>
@@ -231,7 +234,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-Mn-HDL">
-                                <rect key="frame" x="28" y="106" width="88" height="26"/>
+                                <rect key="frame" x="31" y="106" width="88" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Currency: " id="ZDj-ia-b8t">
                                     <font key="font" metaFont="system" size="14"/>
@@ -319,6 +322,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="General" width="64" height="64"/>
+        <image name="General" width="32" height="32"/>
     </resources>
 </document>

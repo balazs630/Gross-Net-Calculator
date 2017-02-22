@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet weak private var gross: NSTextField!
     @IBOutlet weak private var net: NSTextField!
@@ -24,12 +24,12 @@ class ViewController: NSViewController {
         return 1 + prefs.double(forKey: "vatRate") / 100
     }
     
-    @IBAction func grossToNet(_ sender: Any) {
+    func grossToNet() {
         net.doubleValue = (gross.doubleValue / vatRateMultiplier).rounded()
         calculateVat()
     }
 
-    @IBAction func netToGross(_ sender: Any) {
+    func netToGross() {
         gross.doubleValue = (net.doubleValue * vatRateMultiplier).rounded()
         calculateVat()
     }
@@ -38,10 +38,19 @@ class ViewController: NSViewController {
         vat.doubleValue = gross.doubleValue - net.doubleValue
     }
     
-    func updateLabels() {
-        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
-        currencyLabel2.stringValue = currencyLabel1.stringValue
-        currencyLabel3.stringValue = currencyLabel1.stringValue
+    override func controlTextDidChange(_ notification: Notification) {
+        if notification.object as? NSTextField == self.gross {
+            grossToNet()
+        } else if notification.object as? NSTextField == self.net {
+            netToGross()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: LABEL_REFRESH, object: nil)
     }
     
     override func viewDidAppear() {
@@ -53,18 +62,10 @@ class ViewController: NSViewController {
         vat.formatter = numberValueFormatter
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: LABEL_REFRESH, object: nil)
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-        
+    func updateLabels() {
+        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
+        currencyLabel2.stringValue = currencyLabel1.stringValue
+        currencyLabel3.stringValue = currencyLabel1.stringValue
     }
     
 }
