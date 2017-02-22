@@ -9,14 +9,14 @@
 import Cocoa
 
 
-class PreferencesMenu: NSViewController, NSTextFieldDelegate {
+class PreferencesMenu: NSViewController {
     
     @IBOutlet weak var vatRate: NSTextField!
-    @IBOutlet weak var notNumberWarningLabel: NSTextField!
     @IBOutlet weak var radioButtonFt: NSButton!
     @IBOutlet weak var radioButtonEuro: NSButton!
     @IBOutlet weak var radioButtonDollar: NSButton!
     
+    let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
     
     @IBAction func currencySelected(_ sender: NSButton) {
@@ -25,7 +25,8 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        let enteredVatValue = Double(vatRate.stringValue)
+        let enteredVatValue = numberValueFormatter.number(from: vatRate.stringValue)
+    
         if enteredVatValue != nil {
             prefs.set(vatRate.stringValue, forKey: "vatRate")
             prefs.synchronize()
@@ -44,15 +45,6 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
         prefs.synchronize()
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
-        let enteredVatValue = Double(vatRate.stringValue)
-        if enteredVatValue == nil {
-            notNumberWarningLabel.stringValue = "Given value\n is not a number!"
-        } else {
-            notNumberWarningLabel.stringValue = ""
-        }
-    }
-    
     override func viewDidAppear() {
         checkUserDefaultsExist()
         
@@ -67,9 +59,13 @@ class PreferencesMenu: NSViewController, NSTextFieldDelegate {
         default:
             NSLog("Unexpected currency was selected")
         }
-        
-        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+
         vatRate.stringValue = prefs.string(forKey: "vatRate")!
+    
+        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+        numberValueFormatter.maximumFractionDigits = 2
+        numberValueFormatter.decimalSeparator = "."
+        vatRate.formatter = numberValueFormatter
     }
 
 }

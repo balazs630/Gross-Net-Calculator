@@ -76,14 +76,14 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="9JX-T3-DFx"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Xke-TD-c4w"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="3Cn-Re-2r5"/>
-                                <toolbarItem implicitItemIdentifier="269C03B5-62E2-4EC1-AA69-BFF89BF053F6" label="General" paletteLabel="General" image="General_32px" id="0p1-hn-jba">
+                                <toolbarItem implicitItemIdentifier="269C03B5-62E2-4EC1-AA69-BFF89BF053F6" label="General" paletteLabel="General" image="General" id="0p1-hn-jba">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="32" height="32"/>
                                     <size key="maxSize" width="32" height="32"/>
                                     <button key="view" id="git-1I-Qni">
                                         <rect key="frame" x="8" y="14" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="General_32px" imagePosition="above" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="w2k-3g-EDd">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="General" imagePosition="above" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="w2k-3g-EDd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -115,7 +115,6 @@
                                 <rect key="frame" x="119" y="144" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="gfj-cT-fmu">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="s4e-2h-1u7"/>
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -137,7 +136,6 @@
                                 <rect key="frame" x="119" y="96" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="7js-We-6k5">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="wGq-yK-4RR"/>
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -168,7 +166,6 @@
                                 <rect key="frame" x="171" y="48" width="105" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="SBo-6z-3VG">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="NgR-4Y-36F"/>
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -307,19 +304,9 @@
                                     </connections>
                                 </buttonCell>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkB-ob-JHP">
-                                <rect key="frame" x="199" y="140" width="111" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="AWY-PV-Gpj">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="notNumberWarningLabel" destination="tkB-ob-JHP" id="KTx-cA-chC"/>
                         <outlet property="radioButtonDollar" destination="sDf-Gb-Zjm" id="dtC-st-3mw"/>
                         <outlet property="radioButtonEuro" destination="aBf-Tp-Kwv" id="Ukv-pJ-wIv"/>
                         <outlet property="radioButtonFt" destination="iW0-S6-hgW" id="MZl-uJ-FrI"/>
@@ -332,6 +319,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="General_32px" width="32" height="32"/>
+        <image name="General" width="64" height="64"/>
     </resources>
 </document>

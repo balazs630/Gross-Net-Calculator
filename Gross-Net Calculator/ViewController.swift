@@ -18,6 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var currencyLabel2: NSTextField!
     @IBOutlet weak var currencyLabel3: NSTextField!
     
+    let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
     var vatRateMultiplier: Double {
         return 1 + prefs.double(forKey: "vatRate") / 100
@@ -45,7 +46,11 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         updateLabels()
+        
         view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+        gross.formatter = numberValueFormatter
+        net.formatter = numberValueFormatter
+        vat.formatter = numberValueFormatter
     }
     
     override func viewDidLoad() {
