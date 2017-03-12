@@ -50,16 +50,29 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setUserDefaultsIfNotExist()
         NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: LABEL_REFRESH, object: nil)
     }
     
     override func viewDidAppear() {
         updateLabels()
         
-        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+        numberValueFormatter.numberStyle = .none
         gross.formatter = numberValueFormatter
         net.formatter = numberValueFormatter
         vat.formatter = numberValueFormatter
+        
+        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+    }
+    
+    func setUserDefaultsIfNotExist() {
+        if prefs.object(forKey: "vatRate") == nil {
+            prefs.set(27, forKey: "vatRate")
+        }
+        if prefs.object(forKey: "currency") == nil {
+            prefs.set("Ft", forKey: "currency")
+        }
+        prefs.synchronize()
     }
     
     func updateLabels() {

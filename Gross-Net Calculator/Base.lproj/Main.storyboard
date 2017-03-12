@@ -114,7 +114,7 @@
                             <textField identifier="grossTextField" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FY3-JR-OFM">
                                 <rect key="frame" x="119" y="144" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="grossTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="gfj-cT-fmu">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="grossTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="gfj-cT-fmu">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -135,7 +135,7 @@
                             <textField identifier="netTextField" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhN-LU-omy">
                                 <rect key="frame" x="119" y="96" width="158" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="netTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="7js-We-6k5">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" identifier="netTextFieldCell" drawsBackground="YES" usesSingleLineMode="YES" id="7js-We-6k5">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -250,7 +250,7 @@
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="currencySelected:" target="chL-9t-6R6" id="Mfy-Pg-5Dx"/>
+                                    <action selector="currencyDidSelect:" target="chL-9t-6R6" id="1ZV-Pq-eqo"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-Tp-Kwv">
@@ -261,7 +261,7 @@
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="currencySelected:" target="chL-9t-6R6" id="sMN-1b-cNI"/>
+                                    <action selector="currencyDidSelect:" target="chL-9t-6R6" id="UWx-Ru-AsT"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDf-Gb-Zjm">
@@ -272,7 +272,7 @@
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="currencySelected:" target="chL-9t-6R6" id="RrU-FN-Sun"/>
+                                    <action selector="currencyDidSelect:" target="chL-9t-6R6" id="Ajh-jY-OUB"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-7p-Q74">

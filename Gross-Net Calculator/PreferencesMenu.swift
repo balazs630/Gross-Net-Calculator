@@ -19,7 +19,7 @@ class PreferencesMenu: NSViewController {
     let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
     
-    @IBAction func currencySelected(_ sender: NSButton) {
+    @IBAction func currencyDidSelect(_ sender: NSButton) {
         prefs.set(sender.title, forKey: "currency")
         prefs.synchronize()
     }
@@ -35,19 +35,7 @@ class PreferencesMenu: NSViewController {
         self.view.window?.close()
     }
     
-    func checkUserDefaultsExist() {
-        if prefs.object(forKey: "vatRate") == nil {
-            prefs.set(27, forKey: "vatRate")
-        }
-        if prefs.object(forKey: "currency") == nil {
-            radioButtonFt.state = 1
-        }
-        prefs.synchronize()
-    }
-    
     override func viewDidAppear() {
-        checkUserDefaultsExist()
-        
         let radioButtonState = prefs.string(forKey: "currency")!
         switch radioButtonState {
         case "Ft":
