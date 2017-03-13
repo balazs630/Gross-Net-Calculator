@@ -1,13 +1,14 @@
+<img src="http://i.imgur.com/9vCIZGF.png" width="80px" />
 # Gross-Net-Calculator
-Simple Gross-Net Calculator written in Swift 3
+
+Simple gross :left_right_arrow: net calculator written in Swift 3.
 
 Main application:
 
-![alt tag](http://i.imgur.com/vlTsYud.jpg)
+<img src="http://i.imgur.com/IaFKgPN.jpg" width="350px" />
 
-Dock icon:
+Preferences menu: 
 
-![alt tag](http://i.imgur.com/WG4qxst.jpg)
+<img src="http://i.imgur.com/nZNJ8Rx.jpg" width="350px" />
 
 Prebuilt copies can be downloaded from the project [releases page](https://github.com/balazs630/Gross-Net-Calculator/releases).
-
