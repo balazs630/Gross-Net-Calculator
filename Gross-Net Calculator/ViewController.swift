@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet weak private var gross: NSTextField!
     @IBOutlet weak private var net: NSTextField!
@@ -18,17 +18,18 @@ class ViewController: NSViewController {
     @IBOutlet weak var currencyLabel2: NSTextField!
     @IBOutlet weak var currencyLabel3: NSTextField!
     
+    let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
     var vatRateMultiplier: Double {
         return 1 + prefs.double(forKey: "vatRate") / 100
     }
     
-    @IBAction func grossToNet(_ sender: Any) {
+    func grossToNet() {
         net.doubleValue = (gross.doubleValue / vatRateMultiplier).rounded()
         calculateVat()
     }
 
-    @IBAction func netToGross(_ sender: Any) {
+    func netToGross() {
         gross.doubleValue = (net.doubleValue * vatRateMultiplier).rounded()
         calculateVat()
     }
@@ -37,30 +38,47 @@ class ViewController: NSViewController {
         vat.doubleValue = gross.doubleValue - net.doubleValue
     }
     
-    func updateLabels() {
-        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
-        currencyLabel2.stringValue = currencyLabel1.stringValue
-        currencyLabel3.stringValue = currencyLabel1.stringValue
-    }
-    
-    override func viewDidAppear() {
-        updateLabels()
+    override func controlTextDidChange(_ notification: Notification) {
+        if notification.object as? NSTextField == self.gross {
+            grossToNet()
+        } else if notification.object as? NSTextField == self.net {
+            netToGross()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(forName: CURRENCY_UPDATE_NOTIFICATION, object: nil, queue: nil) {
-        Notification in self.updateLabels()
-        }
         // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
         
+        setUserDefaultsIfNotExist()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: LABEL_REFRESH, object: nil)
+    }
+    
+    override func viewDidAppear() {
+        updateLabels()
+        
+        numberValueFormatter.numberStyle = .none
+        gross.formatter = numberValueFormatter
+        net.formatter = numberValueFormatter
+        vat.formatter = numberValueFormatter
+        
+        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+    }
+    
+    func setUserDefaultsIfNotExist() {
+        if prefs.object(forKey: "vatRate") == nil {
+            prefs.set(27, forKey: "vatRate")
+        }
+        if prefs.object(forKey: "currency") == nil {
+            prefs.set("Ft", forKey: "currency")
+        }
+        prefs.synchronize()
+    }
+    
+    func updateLabels() {
+        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
+        currencyLabel2.stringValue = currencyLabel1.stringValue
+        currencyLabel3.stringValue = currencyLabel1.stringValue
     }
     
 }

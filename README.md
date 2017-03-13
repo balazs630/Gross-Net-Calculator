@@ -10,3 +10,5 @@ Main application:
 Preferences menu: 
 
 <img src="http://i.imgur.com/nZNJ8Rx.jpg" width="350px" />
+
+Prebuilt copies can be downloaded from the project [releases page](https://github.com/balazs630/Gross-Net-Calculator/releases).
