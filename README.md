@@ -9,3 +9,5 @@ Dock icon:
 
 ![alt tag](http://i.imgur.com/WG4qxst.jpg)
 
+Prebuilt copies can be downloaded from the project [releases page](https://github.com/balazs630/Gross-Net-Calculator/releases).
+

@@ -8,4 +8,4 @@
 
 import Cocoa
 
-let CURRENCY_UPDATE_NOTIFICATION = NSNotification.Name("currencyUpdaterNotification")
+let LABEL_REFRESH = NSNotification.Name("currencyLabelUpdaterNotification")
