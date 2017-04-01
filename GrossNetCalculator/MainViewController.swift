@@ -8,15 +8,15 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class MainViewController: NSViewController, NSTextFieldDelegate {
 
-    @IBOutlet weak private var gross: NSTextField!
-    @IBOutlet weak private var net: NSTextField!
-    @IBOutlet weak private var vat: NSTextField!
+    @IBOutlet weak private var txtGross: NSTextField!
+    @IBOutlet weak private var txtNet: NSTextField!
+    @IBOutlet weak private var txtVat: NSTextField!
     
-    @IBOutlet weak var currencyLabel1: NSTextField!
-    @IBOutlet weak var currencyLabel2: NSTextField!
-    @IBOutlet weak var currencyLabel3: NSTextField!
+    @IBOutlet weak var lblCurrency1: NSTextField!
+    @IBOutlet weak var lblCurrency2: NSTextField!
+    @IBOutlet weak var lblCurrency3: NSTextField!
     
     let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
@@ -25,23 +25,23 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func grossToNet() {
-        net.doubleValue = (gross.doubleValue / vatRateMultiplier).rounded()
+        txtNet.doubleValue = (txtGross.doubleValue / vatRateMultiplier).rounded()
         calculateVat()
     }
 
     func netToGross() {
-        gross.doubleValue = (net.doubleValue * vatRateMultiplier).rounded()
+        txtGross.doubleValue = (txtNet.doubleValue * vatRateMultiplier).rounded()
         calculateVat()
     }
     
     func calculateVat() {
-        vat.doubleValue = gross.doubleValue - net.doubleValue
+        txtVat.doubleValue = txtGross.doubleValue - txtNet.doubleValue
     }
     
     override func controlTextDidChange(_ notification: Notification) {
-        if notification.object as? NSTextField == self.gross {
+        if notification.object as? NSTextField == self.txtGross {
             grossToNet()
-        } else if notification.object as? NSTextField == self.net {
+        } else if notification.object as? NSTextField == self.txtNet {
             netToGross()
         }
     }
@@ -58,9 +58,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         updateLabels()
         
         numberValueFormatter.numberStyle = .none
-        gross.formatter = numberValueFormatter
-        net.formatter = numberValueFormatter
-        vat.formatter = numberValueFormatter
+        txtGross.formatter = numberValueFormatter
+        txtNet.formatter = numberValueFormatter
+        txtVat.formatter = numberValueFormatter
         
         view.window!.styleMask.remove(NSWindowStyleMask.resizable)
     }
@@ -76,9 +76,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func updateLabels() {
-        currencyLabel1.stringValue = prefs.object(forKey: "currency") as! String
-        currencyLabel2.stringValue = currencyLabel1.stringValue
-        currencyLabel3.stringValue = currencyLabel1.stringValue
+        lblCurrency1.stringValue = prefs.object(forKey: "currency") as! String
+        lblCurrency2.stringValue = lblCurrency1.stringValue
+        lblCurrency3.stringValue = lblCurrency1.stringValue
     }
     
 }

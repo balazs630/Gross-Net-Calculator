@@ -11,10 +11,10 @@ import Cocoa
 
 class PreferencesMenu: NSViewController {
     
-    @IBOutlet weak var vatRate: NSTextField!
-    @IBOutlet weak var radioButtonFt: NSButton!
-    @IBOutlet weak var radioButtonEuro: NSButton!
-    @IBOutlet weak var radioButtonDollar: NSButton!
+    @IBOutlet weak var txtVatRate: NSTextField!
+    @IBOutlet weak var rbtnFt: NSButton!
+    @IBOutlet weak var rbtnEuro: NSButton!
+    @IBOutlet weak var rbtnDollar: NSButton!
     
     let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
@@ -24,11 +24,11 @@ class PreferencesMenu: NSViewController {
         prefs.synchronize()
     }
     
-    @IBAction func doneButton(_ sender: Any) {
-        let enteredVatValue = numberValueFormatter.number(from: vatRate.stringValue)
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        let enteredVatValue = numberValueFormatter.number(from: txtVatRate.stringValue)
     
         if enteredVatValue != nil {
-            prefs.set(vatRate.stringValue, forKey: "vatRate")
+            prefs.set(txtVatRate.stringValue, forKey: "vatRate")
             prefs.synchronize()
         }
         NotificationCenter.default.post(name: LABEL_REFRESH, object: nil)
@@ -39,21 +39,21 @@ class PreferencesMenu: NSViewController {
         let radioButtonState = prefs.string(forKey: "currency")!
         switch radioButtonState {
         case "Ft":
-            radioButtonFt.state = 1
+            rbtnFt.state = 1
         case "€":
-            radioButtonEuro.state = 1
+            rbtnEuro.state = 1
         case "$":
-            radioButtonDollar.state = 1
+            rbtnDollar.state = 1
         default:
             NSLog("Unexpected currency was selected")
         }
 
-        vatRate.stringValue = prefs.string(forKey: "vatRate")!
+        txtVatRate.stringValue = prefs.string(forKey: "vatRate")!
     
         view.window!.styleMask.remove(NSWindowStyleMask.resizable)
         numberValueFormatter.maximumFractionDigits = 2
         numberValueFormatter.decimalSeparator = "."
-        vatRate.formatter = numberValueFormatter
+        txtVatRate.formatter = numberValueFormatter
     }
 
 }
