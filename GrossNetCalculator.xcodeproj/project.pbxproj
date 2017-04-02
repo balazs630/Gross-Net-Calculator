@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1645481E90176F005857E3 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1645471E90176F005857E3 /* CalculatorTests.swift */; };
+		AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1645471E90176F005857E3 /* MainViewControllerTests.swift */; };
 		AC3F8E591E551DE500492154 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3F8E581E551DE500492154 /* Constants.swift */; };
 		AC7EAC161E5CE435008B874A /* NumberValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EAC151E5CE435008B874A /* NumberValueFormatter.swift */; };
 		ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		AC1645451E90176F005857E3 /* GrossNetCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrossNetCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC1645471E90176F005857E3 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		AC1645471E90176F005857E3 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		AC1645491E90176F005857E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3F8E581E551DE500492154 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC7EAC151E5CE435008B874A /* NumberValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberValueFormatter.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		AC1645461E90176F005857E3 /* Gross-Net Calculator Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AC1645471E90176F005857E3 /* CalculatorTests.swift */,
+				AC1645471E90176F005857E3 /* MainViewControllerTests.swift */,
 				AC1645491E90176F005857E3 /* Info.plist */,
 			);
 			name = "Gross-Net Calculator Tests";
@@ -206,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC1645481E90176F005857E3 /* CalculatorTests.swift in Sources */,
+				AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +402,7 @@
 				AC16454D1E90176F005857E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "GrossNetCalculator" */ = {
 			isa = XCConfigurationList;

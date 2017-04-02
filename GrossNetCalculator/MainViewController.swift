@@ -10,9 +10,9 @@ import Cocoa
 
 class MainViewController: NSViewController, NSTextFieldDelegate {
 
-    @IBOutlet weak private var txtGross: NSTextField!
-    @IBOutlet weak private var txtNet: NSTextField!
-    @IBOutlet weak private var txtVat: NSTextField!
+    @IBOutlet weak var txtGross: NSTextField!
+    @IBOutlet weak var txtNet: NSTextField!
+    @IBOutlet weak var txtVat: NSTextField!
     
     @IBOutlet weak var lblCurrency1: NSTextField!
     @IBOutlet weak var lblCurrency2: NSTextField!
@@ -21,28 +21,30 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
     var vatRateMultiplier: Double {
-        return 1 + prefs.double(forKey: "vatRate") / 100
+        get {
+            return 1 + prefs.double(forKey: "vatRate") / 100
+        }
     }
     
-    func grossToNet() {
+    func grossToNetCalc() {
         txtNet.doubleValue = (txtGross.doubleValue / vatRateMultiplier).rounded()
-        calculateVat()
+        vatCalc()
     }
 
-    func netToGross() {
+    func netToGrossCalc() {
         txtGross.doubleValue = (txtNet.doubleValue * vatRateMultiplier).rounded()
-        calculateVat()
+        vatCalc()
     }
     
-    func calculateVat() {
+    func vatCalc() {
         txtVat.doubleValue = txtGross.doubleValue - txtNet.doubleValue
     }
     
     override func controlTextDidChange(_ notification: Notification) {
         if notification.object as? NSTextField == self.txtGross {
-            grossToNet()
+            grossToNetCalc()
         } else if notification.object as? NSTextField == self.txtNet {
-            netToGross()
+            netToGrossCalc()
         }
     }
     
@@ -76,9 +78,11 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func updateLabels() {
-        lblCurrency1.stringValue = prefs.object(forKey: "currency") as! String
-        lblCurrency2.stringValue = lblCurrency1.stringValue
-        lblCurrency3.stringValue = lblCurrency1.stringValue
+        let currency: String = prefs.object(forKey: "currency") as! String
+        
+        lblCurrency1.stringValue = currency
+        lblCurrency2.stringValue = currency
+        lblCurrency3.stringValue = currency
     }
     
 }

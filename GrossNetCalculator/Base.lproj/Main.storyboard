@@ -106,7 +106,7 @@
         <!--Gross-Net Calculator-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="Gross-Net Calculator" id="XfG-lQ-9wD" customClass="MainViewController" customModule="GrossNetCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Gross-Net Calculator" storyboardIdentifier="MainVC" id="XfG-lQ-9wD" customClass="MainViewController" customModule="GrossNetCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="370" height="205"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +173,7 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <accessibility identifier="txtGross"/>
                                 <connections>
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="Zlg-ZK-vAn"/>
                                 </connections>
@@ -185,6 +186,7 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <accessibility identifier="txtNet"/>
                                 <connections>
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="TkE-1l-qUT"/>
                                 </connections>
@@ -197,6 +199,7 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <accessibility identifier="txtVat"/>
                                 <connections>
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="JsP-mr-oqY"/>
                                 </connections>
@@ -303,6 +306,7 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <accessibility identifier="txtVatRate"/>
                                 <connections>
                                     <outlet property="delegate" destination="chL-9t-6R6" id="Lze-jK-Xxy"/>
                                 </connections>
