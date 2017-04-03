@@ -19,11 +19,11 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var lblCurrency3: NSTextField!
     
     let numberValueFormatter = NumberValueFormatter()
+    var activeTextField: String = "gross"
     var prefs: UserDefaults = UserDefaults.standard
+    
     var vatRateMultiplier: Double {
-        get {
-            return 1 + prefs.double(forKey: "vatRate") / 100
-        }
+        return 1 + prefs.double(forKey: "vatRate") / 100
     }
     
     func grossToNetCalc() {
@@ -42,8 +42,10 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     
     override func controlTextDidChange(_ notification: Notification) {
         if notification.object as? NSTextField == self.txtGross {
+            activeTextField = "gross"
             grossToNetCalc()
         } else if notification.object as? NSTextField == self.txtNet {
+            activeTextField = "net"
             netToGrossCalc()
         }
     }
@@ -53,7 +55,9 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         // Do any additional setup after loading the view.
         
         setUserDefaultsIfNotExist()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: LABEL_REFRESH, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: UPDATE_CURRENCY_LABELS, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextFields), name: UPDATE_TEXTFIELDS, object: nil)
     }
     
     override func viewDidAppear() {
@@ -83,6 +87,14 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         lblCurrency1.stringValue = currency
         lblCurrency2.stringValue = currency
         lblCurrency3.stringValue = currency
+    }
+    
+    func updateTextFields() {
+        if activeTextField == "gross" {
+            grossToNetCalc()
+        } else if activeTextField == "net" {
+            netToGrossCalc()
+        }
     }
     
 }
