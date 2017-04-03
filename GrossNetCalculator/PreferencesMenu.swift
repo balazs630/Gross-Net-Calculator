@@ -12,32 +12,47 @@ import Cocoa
 class PreferencesMenu: NSViewController {
     
     @IBOutlet weak var txtVatRate: NSTextField!
+    
     @IBOutlet weak var rbtnFt: NSButton!
     @IBOutlet weak var rbtnEuro: NSButton!
     @IBOutlet weak var rbtnDollar: NSButton!
     
     let numberValueFormatter = NumberValueFormatter()
     var prefs: UserDefaults = UserDefaults.standard
+    var choosenCurrency: String = ""
+    
+    var currency: String {
+        return prefs.string(forKey: "currency")!
+    }
+    
+    var vatRate: Double {
+        return prefs.double(forKey: "vatRate")
+    }
     
     @IBAction func currencyDidSelect(_ sender: NSButton) {
-        prefs.set(sender.title, forKey: "currency")
-        prefs.synchronize()
+        choosenCurrency = sender.title
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         let enteredVatValue = numberValueFormatter.number(from: txtVatRate.stringValue)
     
-        if enteredVatValue != nil {
+        if enteredVatValue != nil && enteredVatValue?.doubleValue != vatRate {
             prefs.set(txtVatRate.stringValue, forKey: "vatRate")
+            NotificationCenter.default.post(name: UPDATE_TEXTFIELDS, object: nil)
             prefs.synchronize()
         }
-        NotificationCenter.default.post(name: LABEL_REFRESH, object: nil)
+        
+        if choosenCurrency != currency {
+            prefs.set(choosenCurrency, forKey: "currency")
+            NotificationCenter.default.post(name: UPDATE_CURRENCY_LABELS, object: nil)
+            prefs.synchronize()
+        }
+        
         self.view.window?.close()
     }
     
     override func viewDidAppear() {
-        let radioButtonState = prefs.string(forKey: "currency")!
-        switch radioButtonState {
+        switch currency {
         case "Ft":
             rbtnFt.state = 1
         case "€":
@@ -48,7 +63,8 @@ class PreferencesMenu: NSViewController {
             NSLog("Unexpected currency was selected")
         }
 
-        txtVatRate.stringValue = prefs.string(forKey: "vatRate")!
+        choosenCurrency = currency
+        txtVatRate.doubleValue = vatRate
     
         view.window!.styleMask.remove(NSWindowStyleMask.resizable)
         numberValueFormatter.maximumFractionDigits = 2
@@ -57,16 +73,3 @@ class PreferencesMenu: NSViewController {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

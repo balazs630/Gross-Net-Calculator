@@ -11,6 +11,7 @@ import XCTest
 @testable import GrossNetCalculator
 class MainViewControllerTests: XCTestCase {
     
+    // system under test
     var sut: MainViewController!
     
     override func setUp() {
