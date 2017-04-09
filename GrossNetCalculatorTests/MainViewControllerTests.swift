@@ -1,5 +1,5 @@
 //
-//  GrossNetCalculatorTests.swift
+//  MainViewControllerTests.swift
 //  GrossNetCalculatorTests
 //
 //  Created by Horváth Balázs on 2017. 04. 01..
@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import GrossNetCalculator
+@testable import Gross_Net_Calculator
 class MainViewControllerTests: XCTestCase {
     
     // system under test
@@ -32,28 +32,32 @@ class MainViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut)
     }
     
-    func testGrossToNetCalc() {
+    func testMainVC_WindowTitle() {
+        XCTAssertEqual(sut.title, "Gross-Net Calculator")
+    }
+    
+    func testMainVC_GrossToNetCalc() {
         sut.txtGross.intValue = 1270
         sut.grossToNetCalc()
         XCTAssertEqual(sut.txtNet.doubleValue, sut.txtGross.doubleValue / sut.vatRateMultiplier)
     }
     
-    func testNetToGrossCalc() {
+    func testMainVC_NetToGrossCalc() {
         sut.txtNet.intValue = 1000
         sut.netToGrossCalc()
         XCTAssertEqual(sut.txtGross.doubleValue, sut.txtNet.doubleValue * sut.vatRateMultiplier)
     }
     
-    func testVatCalc() {
+    func testMainVC_VatCalc() {
         sut.txtGross.intValue = 1270
         sut.txtNet.intValue = 1000
         sut.vatCalc()
         XCTAssertEqual(sut.txtVat.intValue, 270)
     }
     
-    func testUpdateLabels() {
+    func testMainVC_UpdateLabels() {
         let currencyName: String = sut.prefs.object(forKey: "currency") as! String
-        sut.updateLabels()
+        sut.updateCurrencyLblValues()
         XCTAssertEqual(sut.lblCurrency1.stringValue, currencyName)
         XCTAssertEqual(sut.lblCurrency2.stringValue, currencyName)
         XCTAssertEqual(sut.lblCurrency3.stringValue, currencyName)

@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Gross-Net Calculator
+//  MainViewController.swift
+//  GrossNetCalculator
 //
 //  Created by Horváth Balázs on 2016. 10. 18..
 //  Copyright © 2016. Horváth Balázs. All rights reserved.
@@ -42,11 +42,17 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     
     override func controlTextDidChange(_ notification: Notification) {
         if notification.object as? NSTextField == self.txtGross {
-            activeTextField = "gross"
             grossToNetCalc()
         } else if notification.object as? NSTextField == self.txtNet {
-            activeTextField = "net"
             netToGrossCalc()
+        }
+    }
+    
+    override func controlTextDidBeginEditing(_ notification: Notification) {
+        if notification.object as? NSTextField == self.txtGross {
+            activeTextField = "gross"
+        } else if notification.object as? NSTextField == self.txtNet {
+            activeTextField = "net"
         }
     }
     
@@ -56,12 +62,12 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         
         setUserDefaultsIfNotExist()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLabels), name: UPDATE_CURRENCY_LABELS, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTextFields), name: UPDATE_TEXTFIELDS, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCurrencyLblValues), name: UPDATE_CURRENCY_LABELS, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTxtValues), name: UPDATE_TEXTFIELDS, object: nil)
     }
     
     override func viewDidAppear() {
-        updateLabels()
+        updateCurrencyLblValues()
         
         numberValueFormatter.numberStyle = .none
         txtGross.formatter = numberValueFormatter
@@ -81,7 +87,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         prefs.synchronize()
     }
     
-    func updateLabels() {
+    func updateCurrencyLblValues() {
         let currency: String = prefs.object(forKey: "currency") as! String
         
         lblCurrency1.stringValue = currency
@@ -89,10 +95,10 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         lblCurrency3.stringValue = currency
     }
     
-    func updateTextFields() {
-        if activeTextField == "gross" {
-            grossToNetCalc()
-        } else if activeTextField == "net" {
+    func updateTxtValues() {
+        if activeTextField == "gross" && txtGross.stringValue != "" {
+                grossToNetCalc()
+        } else if activeTextField == "net" && txtNet.stringValue != "" {
             netToGrossCalc()
         }
     }

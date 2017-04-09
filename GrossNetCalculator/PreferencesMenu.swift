@@ -1,6 +1,6 @@
 //
 //  PreferencesMenu.swift
-//  Gross-Net Calculator
+//  GrossNetCalculator
 //
 //  Created by Horváth Balázs on 2016. 11. 26..
 //  Copyright © 2016. Horváth Balázs. All rights reserved.
@@ -66,7 +66,6 @@ class PreferencesMenu: NSViewController {
         choosenCurrency = currency
         txtVatRate.doubleValue = vatRate
     
-        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
         numberValueFormatter.maximumFractionDigits = 2
         numberValueFormatter.decimalSeparator = "."
         txtVatRate.formatter = numberValueFormatter
