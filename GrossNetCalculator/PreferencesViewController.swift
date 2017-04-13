@@ -1,15 +1,14 @@
 //
-//  PreferencesMenu.swift
+//  PreferencesViewController.swift
 //  GrossNetCalculator
 //
-//  Created by Horváth Balázs on 2016. 11. 26..
-//  Copyright © 2016. Horváth Balázs. All rights reserved.
+//  Created by Horváth Balázs on 2017. 04. 13.
+//  Copyright © 2017. Horváth Balázs. All rights reserved.
 //
 
 import Cocoa
 
-
-class PreferencesMenu: NSViewController {
+class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var txtVatRate: NSTextField!
     
@@ -35,7 +34,7 @@ class PreferencesMenu: NSViewController {
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         let enteredVatValue = numberValueFormatter.number(from: txtVatRate.stringValue)
-    
+        
         if enteredVatValue != nil && enteredVatValue?.doubleValue != vatRate {
             prefs.set(txtVatRate.stringValue, forKey: "vatRate")
             NotificationCenter.default.post(name: UPDATE_TEXTFIELDS, object: nil)
@@ -62,13 +61,19 @@ class PreferencesMenu: NSViewController {
         default:
             NSLog("Unexpected currency was selected")
         }
-
+        
         choosenCurrency = currency
         txtVatRate.doubleValue = vatRate
-    
+        
         numberValueFormatter.maximumFractionDigits = 2
         numberValueFormatter.decimalSeparator = "."
         txtVatRate.formatter = numberValueFormatter
     }
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
+    }
+    
 }

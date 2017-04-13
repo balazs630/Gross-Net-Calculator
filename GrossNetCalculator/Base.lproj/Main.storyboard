@@ -219,7 +219,7 @@
         <!--Preferences-->
         <scene sceneID="jB7-z3-ZAf">
             <objects>
-                <viewController title="Preferences" id="chL-9t-6R6" customClass="PreferencesMenu" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preferences" storyboardIdentifier="PreferencesVC" id="chL-9t-6R6" customClass="PreferencesViewController" customModule="Gross_Net_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9zg-tY-w9T">
                         <rect key="frame" x="0.0" y="0.0" width="319" height="203"/>
                         <autoresizingMask key="autoresizingMask"/>
