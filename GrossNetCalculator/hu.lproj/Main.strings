@@ -1,0 +1,78 @@
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "0JD-XF-WTi"; */
+"0JD-XF-WTi.title" = "%";
+
+/* Class = "NSMenuItem"; title = "Gross-Net Calculator"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Bruttó-Nettó Kalkulátor";
+
+/* Class = "NSTextFieldCell"; title = "Net:"; ObjectID = "3or-ow-Ijk"; */
+"3or-ow-Ijk.title" = "Nettó:";
+
+/* Class = "NSMenuItem"; title = "Quit Gross-Net Calculator"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Kilépés a Bruttó-Nettó Kalkulátorból";
+
+/* Class = "NSMenuItem"; title = "About Gross-Net Calculator"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "A Bruttó-Nettó Kalkulátor névjegye";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Beállítások…";
+
+/* Class = "NSTextFieldCell"; title = "Gross:"; ObjectID = "Hm9-MB-3R0"; */
+"Hm9-MB-3R0.title" = "Bruttó:";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Összes megjelenítése";
+
+/* Class = "NSButtonCell"; title = "$"; ObjectID = "Mwu-lW-Gyn"; */
+"Mwu-lW-Gyn.title" = "$";
+
+/* Class = "NSTextFieldCell"; title = "Ft"; ObjectID = "NM8-vJ-mcp"; */
+"NM8-vJ-mcp.title" = "Ft";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "O7M-go-wmy"; */
+"O7M-go-wmy.title" = "Beállítások";
+
+/* Class = "NSMenuItem"; title = "Hide Gross-Net Calculator"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "A Bruttó-Nettó Kalkulátor elrejtése";
+
+/* Class = "NSTextFieldCell"; title = "Ft"; ObjectID = "Poc-G5-Ngk"; */
+"Poc-G5-Ngk.title" = "Ft";
+
+/* Class = "NSTextFieldCell"; title = "Ft"; ObjectID = "PvG-Fh-Ufv"; */
+"PvG-Fh-Ufv.title" = "Ft";
+
+/* Class = "NSViewController"; title = "Gross-Net Calculator"; ObjectID = "XfG-lQ-9wD"; */
+"XfG-lQ-9wD.title" = "Bruttó-Nettó Kalkulátor";
+
+/* Class = "NSButtonCell"; title = "Ft"; ObjectID = "YaS-hg-ela"; */
+"YaS-hg-ela.title" = "Ft";
+
+/* Class = "NSTextFieldCell"; title = "Currency: "; ObjectID = "ZDj-ia-b8t"; */
+"ZDj-ia-b8t.title" = "Pénznem: ";
+
+/* Class = "NSViewController"; title = "Preferences"; ObjectID = "chL-9t-6R6"; */
+"chL-9t-6R6.title" = "Beállítások";
+
+/* Class = "NSButtonCell"; title = "€"; ObjectID = "fzi-qV-2p6"; */
+"fzi-qV-2p6.title" = "€";
+
+/* Class = "NSToolbarItem"; label = "General"; ObjectID = "iHu-G6-Lzv"; */
+"iHu-G6-Lzv.label" = "Általános";
+
+/* Class = "NSToolbarItem"; paletteLabel = "General"; ObjectID = "iHu-G6-Lzv"; */
+"iHu-G6-Lzv.paletteLabel" = "Általános";
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "mnm-4U-xHE"; */
+"mnm-4U-xHE.title" = "Kész";
+
+/* Class = "NSTextFieldCell"; title = "VAT:"; ObjectID = "oTm-hh-JdE"; */
+"oTm-hh-JdE.title" = "ÁFA:";
+
+/* Class = "NSMenu"; title = "Gross-Net Calculator"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Bruttó-Nettó Kalkulátor";
+
+/* Class = "NSTextFieldCell"; title = "VAT rate:"; ObjectID = "xQl-Yc-0fa"; */
+"xQl-Yc-0fa.title" = "ÁFA kulcs:";

@@ -7,28 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1645471E90176F005857E3 /* MainViewControllerTests.swift */; };
 		AC3F8E591E551DE500492154 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3F8E581E551DE500492154 /* Constants.swift */; };
+		AC4E190F1EA0183A000F6F4A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */; };
+		AC4E19111EA0197E000F6F4A /* PreferencesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E19101EA0197E000F6F4A /* PreferencesViewControllerTests.swift */; };
 		AC7EAC161E5CE435008B874A /* NumberValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EAC151E5CE435008B874A /* NumberValueFormatter.swift */; };
 		ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */; };
-		ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */; };
+		ACE7DCDE1DB621C6005D3E9F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */; };
 		ACE7DCE01DB621C6005D3E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */; };
 		ACE7DCE31DB621C6005D3E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCE11DB621C6005D3E9F /* Main.storyboard */; };
-		ACFB6B4F1DEA2FFE00DECFB7 /* PreferencesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC16454A1E90176F005857E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACE7DCD01DB621C5005D3E9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACE7DCD71DB621C5005D3E9F;
+			remoteInfo = GrossNetCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		AC1645451E90176F005857E3 /* GrossNetCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrossNetCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1645471E90176F005857E3 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		AC1645491E90176F005857E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3F8E581E551DE500492154 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		AC4E19101EA0197E000F6F4A /* PreferencesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewControllerTests.swift; sourceTree = "<group>"; };
 		AC7EAC151E5CE435008B874A /* NumberValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberValueFormatter.swift; sourceTree = "<group>"; };
 		ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gross-Net Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ACE7DCE21DB621C6005D3E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACE7DCE41DB621C6005D3E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesMenu.swift; sourceTree = "<group>"; };
+		ACFE21711E9A771500671862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACFE21731E9A775E00671862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		ACFE21741E9A778E00671862 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC1645421E90176F005857E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACE7DCD51DB621C5005D3E9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC1645461E90176F005857E3 /* Gross-Net Calculator Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AC1645471E90176F005857E3 /* MainViewControllerTests.swift */,
+				AC4E19101EA0197E000F6F4A /* PreferencesViewControllerTests.swift */,
+				AC1645491E90176F005857E3 /* Info.plist */,
+			);
+			name = "Gross-Net Calculator Tests";
+			path = GrossNetCalculatorTests;
+			sourceTree = "<group>";
+		};
 		ACE7DCCF1DB621C5005D3E9F = {
 			isa = PBXGroup;
 			children = (
 				ACE7DCDA1DB621C5005D3E9F /* Gross-Net Calculator */,
+				AC1645461E90176F005857E3 /* Gross-Net Calculator Tests */,
 				ACE7DCD91DB621C5005D3E9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */,
+				AC1645451E90176F005857E3 /* GrossNetCalculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,24 +96,43 @@
 		ACE7DCDA1DB621C5005D3E9F /* Gross-Net Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
-				ACE7DCDD1DB621C6005D3E9F /* ViewController.swift */,
+				ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */,
+				AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */,
 				AC7EAC151E5CE435008B874A /* NumberValueFormatter.swift */,
 				AC3F8E581E551DE500492154 /* Constants.swift */,
-				ACFB6B4E1DEA2FFE00DECFB7 /* PreferencesMenu.swift */,
+				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
 				ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */,
 				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
 				ACE7DCE41DB621C6005D3E9F /* Info.plist */,
 			);
-			path = "Gross-Net Calculator";
+			name = "Gross-Net Calculator";
+			path = GrossNetCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACE7DCD71DB621C5005D3E9F /* Gross-Net Calculator */ = {
+		AC1645441E90176F005857E3 /* GrossNetCalculatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACE7DCE71DB621C6005D3E9F /* Build configuration list for PBXNativeTarget "Gross-Net Calculator" */;
+			buildConfigurationList = AC16454E1E90176F005857E3 /* Build configuration list for PBXNativeTarget "GrossNetCalculatorTests" */;
+			buildPhases = (
+				AC1645411E90176F005857E3 /* Sources */,
+				AC1645421E90176F005857E3 /* Frameworks */,
+				AC1645431E90176F005857E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC16454B1E90176F005857E3 /* PBXTargetDependency */,
+			);
+			name = GrossNetCalculatorTests;
+			productName = GrossNetCalculatorTests;
+			productReference = AC1645451E90176F005857E3 /* GrossNetCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ACE7DCD71DB621C5005D3E9F /* GrossNetCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE7DCE71DB621C6005D3E9F /* Build configuration list for PBXNativeTarget "GrossNetCalculator" */;
 			buildPhases = (
 				ACE7DCD41DB621C5005D3E9F /* Sources */,
 				ACE7DCD51DB621C5005D3E9F /* Frameworks */,
@@ -85,7 +142,7 @@
 			);
 			dependencies = (
 			);
-			name = "Gross-Net Calculator";
+			name = GrossNetCalculator;
 			productName = "Gross-Net Calculator";
 			productReference = ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -96,17 +153,22 @@
 		ACE7DCD01DB621C5005D3E9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Horváth Balázs";
 				TargetAttributes = {
+					AC1645441E90176F005857E3 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ACE7DCD71DB621C5005D3E9F;
+					};
 					ACE7DCD71DB621C5005D3E9F = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "Gross-Net Calculator" */;
+			buildConfigurationList = ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "GrossNetCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -119,12 +181,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACE7DCD71DB621C5005D3E9F /* Gross-Net Calculator */,
+				ACE7DCD71DB621C5005D3E9F /* GrossNetCalculator */,
+				AC1645441E90176F005857E3 /* GrossNetCalculatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC1645431E90176F005857E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACE7DCD61DB621C5005D3E9F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,25 +207,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC1645411E90176F005857E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */,
+				AC4E19111EA0197E000F6F4A /* PreferencesViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACE7DCD41DB621C5005D3E9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACE7DCDE1DB621C6005D3E9F /* ViewController.swift in Sources */,
+				ACE7DCDE1DB621C6005D3E9F /* MainViewController.swift in Sources */,
 				ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */,
-				ACFB6B4F1DEA2FFE00DECFB7 /* PreferencesMenu.swift in Sources */,
 				AC7EAC161E5CE435008B874A /* NumberValueFormatter.swift in Sources */,
 				AC3F8E591E551DE500492154 /* Constants.swift in Sources */,
+				AC4E190F1EA0183A000F6F4A /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AC16454B1E90176F005857E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACE7DCD71DB621C5005D3E9F /* GrossNetCalculator */;
+			targetProxy = AC16454A1E90176F005857E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ACE7DCE11DB621C6005D3E9F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACE7DCE21DB621C6005D3E9F /* Base */,
+				ACFE21711E9A771500671862 /* Base */,
+				ACFE21731E9A775E00671862 /* en */,
+				ACFE21741E9A778E00671862 /* hu */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -163,10 +252,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AC16454C1E90176F005857E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GrossNetCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gross-Net Calculator.app/Contents/MacOS/Gross-Net Calculator";
+			};
+			name = Debug;
+		};
+		AC16454D1E90176F005857E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GrossNetCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gross-Net Calculator.app/Contents/MacOS/Gross-Net Calculator";
+			};
+			name = Release;
+		};
 		ACE7DCE51DB621C6005D3E9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -217,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -260,10 +381,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Gross-Net Calculator/Info.plist";
+				INFOPLIST_FILE = GrossNetCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "balazs630.Gross-Net-Calculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
+				PRODUCT_NAME = "Gross-Net Calculator";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -273,10 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Gross-Net Calculator/Info.plist";
+				INFOPLIST_FILE = GrossNetCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "balazs630.Gross-Net-Calculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
+				PRODUCT_NAME = "Gross-Net Calculator";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -284,7 +405,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "Gross-Net Calculator" */ = {
+		AC16454E1E90176F005857E3 /* Build configuration list for PBXNativeTarget "GrossNetCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC16454C1E90176F005857E3 /* Debug */,
+				AC16454D1E90176F005857E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "GrossNetCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACE7DCE51DB621C6005D3E9F /* Debug */,
@@ -293,7 +423,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACE7DCE71DB621C6005D3E9F /* Build configuration list for PBXNativeTarget "Gross-Net Calculator" */ = {
+		ACE7DCE71DB621C6005D3E9F /* Build configuration list for PBXNativeTarget "GrossNetCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACE7DCE81DB621C6005D3E9F /* Debug */,

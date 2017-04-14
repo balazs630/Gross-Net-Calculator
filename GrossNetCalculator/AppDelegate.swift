@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Gross-Net Calculator
+//  GrossNetCalculator
 //
 //  Created by Horváth Balázs on 2016. 10. 18..
 //  Copyright © 2016. Horváth Balázs. All rights reserved.
@@ -25,4 +25,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 }
-
