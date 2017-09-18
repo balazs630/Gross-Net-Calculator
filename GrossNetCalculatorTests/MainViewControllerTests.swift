@@ -56,7 +56,7 @@ class MainViewControllerTests: XCTestCase {
     }
     
     func testMainVC_UpdateLabels() {
-        let currencyName: String = sut.prefs.object(forKey: "currency") as! String
+        let currencyName: String = sut.defaults.object(forKey: "currency") as! String
         sut.updateCurrencyLblValues()
         XCTAssertEqual(sut.lblCurrency1.stringValue, currencyName)
         XCTAssertEqual(sut.lblCurrency2.stringValue, currencyName)

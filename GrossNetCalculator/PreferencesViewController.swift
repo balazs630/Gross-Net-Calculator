@@ -8,48 +8,36 @@
 
 import Cocoa
 
+struct NotificationIdentifier {
+    static let updateCurrencyLabels = NSNotification.Name("currencyLabelUpdaterNotification")
+    static let updateTextFields = NSNotification.Name("textfieldUpdaterNotification")
+}
+
 class PreferencesViewController: NSViewController {
-    
+
     @IBOutlet weak var txtVatRate: NSTextField!
-    
+
     @IBOutlet weak var rbtnFt: NSButton!
     @IBOutlet weak var rbtnEuro: NSButton!
     @IBOutlet weak var rbtnDollar: NSButton!
-    
+
+    var defaults: UserDefaults = UserDefaults.standard
     let numberValueFormatter = NumberValueFormatter()
-    var prefs: UserDefaults = UserDefaults.standard
     var choosenCurrency: String = ""
-    
+
     var currency: String {
-        return prefs.string(forKey: "currency")!
+        return defaults.string(forKey: "currency")!
     }
-    
+
     var vatRate: Double {
-        return prefs.double(forKey: "vatRate")
+        return defaults.double(forKey: "vatRate")
     }
-    
-    @IBAction func currencyDidSelect(_ sender: NSButton) {
-        choosenCurrency = sender.title
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
     }
-    
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        let enteredVatValue = numberValueFormatter.number(from: txtVatRate.stringValue)
-        
-        if enteredVatValue != nil && enteredVatValue?.doubleValue != vatRate {
-            prefs.set(txtVatRate.stringValue, forKey: "vatRate")
-            NotificationCenter.default.post(name: UPDATE_TEXTFIELDS, object: nil)
-            prefs.synchronize()
-        }
-        
-        if choosenCurrency != currency {
-            prefs.set(choosenCurrency, forKey: "currency")
-            NotificationCenter.default.post(name: UPDATE_CURRENCY_LABELS, object: nil)
-            prefs.synchronize()
-        }
-        
-        self.view.window?.close()
-    }
-    
+
     override func viewDidAppear() {
         switch currency {
         case "Ft":
@@ -61,19 +49,36 @@ class PreferencesViewController: NSViewController {
         default:
             NSLog("Unexpected currency was selected")
         }
-        
+
         choosenCurrency = currency
         txtVatRate.doubleValue = vatRate
-        
+
         numberValueFormatter.maximumFractionDigits = 2
         numberValueFormatter.decimalSeparator = "."
         txtVatRate.formatter = numberValueFormatter
     }
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+    @IBAction func currencyDidSelect(_ sender: NSButton) {
+        choosenCurrency = sender.title
     }
-    
+
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        let enteredVatValue = txtVatRate.doubleValue
+
+        // If changed the vat value in textfield
+        if enteredVatValue != vatRate {
+            defaults.set(txtVatRate.stringValue, forKey: "vatRate")
+            NotificationCenter.default.post(name: NotificationIdentifier.updateTextFields, object: nil)
+            defaults.synchronize()
+        }
+
+        // If changed the radio button selection
+        if choosenCurrency != currency {
+            defaults.set(choosenCurrency, forKey: "currency")
+            NotificationCenter.default.post(name: NotificationIdentifier.updateCurrencyLabels, object: nil)
+            defaults.synchronize()
+        }
+
+        self.view.window?.close()
+    }
 }

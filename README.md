@@ -5,11 +5,11 @@ Simple gross :left_right_arrow: net calculator written in Swift.
 
 **Main application:**
 
-<img src="http://i.imgur.com/duDhrcJ.jpg" width="500px" />
+<img src="https://i.imgur.com/GvkUFN3.jpg"/>
 
 **Preferences menu:**
 
-<img src="http://i.imgur.com/GfLQYlM.jpg" width="440px" />
+<img src="https://i.imgur.com/LGL5ntQ.jpg"/>
 
 Prebuilt copies can be downloaded from the project [releases page](https://github.com/balazs630/Gross-Net-Calculator/releases).
 
@@ -21,5 +21,3 @@ ___
 - [x] Hungarian and English localisation
 - [x] XCTests to verify the calculations
 
-___
-- [ ] Format text fields to display the numbers with decimal places
