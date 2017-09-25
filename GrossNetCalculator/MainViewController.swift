@@ -48,17 +48,17 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         txtNet.formatter = numberFormatter
         txtVat.formatter = numberFormatter
 
-        view.window!.styleMask.remove(NSWindowStyleMask.resizable)
+        view.window!.styleMask.remove(NSWindow.StyleMask.resizable)
     }
 
     func grossToNetCalc() {
-        txtGross.stringValue = txtGross.stringValue.filterNumbers(maxDigits)
+        txtGross.stringValue = txtGross.stringValue.filterNumbers(upto: maxDigits)
         txtNet.doubleValue = (txtGross.doubleValue / vatRateMultiplier).rounded()
         vatCalc()
     }
 
     func netToGrossCalc() {
-        txtNet.stringValue = txtNet.stringValue.filterNumbers(maxDigits)
+        txtNet.stringValue = txtNet.stringValue.filterNumbers(upto: maxDigits)
         txtGross.doubleValue = (txtNet.doubleValue * vatRateMultiplier).rounded()
         vatCalc()
     }
@@ -74,7 +74,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         } else if notification.object as? NSTextField == self.txtNet {
             netToGrossCalc()
         }
-        // If the text is selected, a keypress would remove the text in the textfield
+        // If the whole text is selected, a new keypress would remove the text in the textfield
         deselectTextFieldContent()
     }
 
@@ -100,8 +100,8 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         keyUpEvent?.post(tap: CGEventTapLocation.cghidEventTap)
     }
 
-    func updateCurrencyLblValues() {
-        // Update the currency labels placed after the textfields
+    @objc func updateCurrencyLblValues() {
+        // Update the currency labels placed after the textfields if the currency was changed in Preferences
         let currency: String = defaults.object(forKey: "currency") as! String
 
         lblCurrency1.stringValue = currency
@@ -109,7 +109,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         lblCurrency3.stringValue = currency
     }
 
-    func updateTxtValues() {
+    @objc func updateTxtValues() {
         // Update the calculations if the vatRate was changed in Preferences
         if activeTextField == "gross" && txtGross.stringValue != "" {
             grossToNetCalc()

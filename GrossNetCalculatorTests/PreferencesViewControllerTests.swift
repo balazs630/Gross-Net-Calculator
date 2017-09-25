@@ -18,8 +18,8 @@ class PreferencesViewControllerTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateController(withIdentifier: "PreferencesVC") as! PreferencesViewController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        sut = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PreferencesVC")) as! PreferencesViewController
         _ = sut.view
 
     }
@@ -46,7 +46,7 @@ class PreferencesViewControllerTests: XCTestCase {
         radioButtons.append(sut.rbtnDollar)
         
         for radiobutton in radioButtons {
-            if (radiobutton.state == 1) {
+            if (radiobutton.state.rawValue == 1) {
                 counter += 1
             }
         }

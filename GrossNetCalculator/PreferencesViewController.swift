@@ -41,11 +41,11 @@ class PreferencesViewController: NSViewController {
     override func viewDidAppear() {
         switch currency {
         case "Ft":
-            rbtnFt.state = 1
+            rbtnFt.state = NSControl.StateValue(rawValue: 1)
         case "€":
-            rbtnEuro.state = 1
+            rbtnEuro.state = NSControl.StateValue(rawValue: 1)
         case "$":
-            rbtnDollar.state = 1
+            rbtnDollar.state = NSControl.StateValue(rawValue: 1)
         default:
             NSLog("Unexpected currency was selected")
         }

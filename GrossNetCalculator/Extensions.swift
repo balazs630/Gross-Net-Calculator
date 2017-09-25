@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    func filterNumbers(_ maxlength: Int) -> String {
+    func filterNumbers(upto maxlength: Int) -> String {
         // Clear formatter's decimal spaces and invalid input, e.x. letters
         let filtered: String = String(self.characters.filter { "0123456789".characters.contains($0) })
 

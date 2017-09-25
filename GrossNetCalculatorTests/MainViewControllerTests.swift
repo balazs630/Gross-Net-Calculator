@@ -18,8 +18,8 @@ class MainViewControllerTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateController(withIdentifier: "MainVC") as! MainViewController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        sut = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "MainVC")) as! MainViewController
         _ = sut.view
     }
     
