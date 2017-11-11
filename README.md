@@ -14,6 +14,8 @@ Simple gross :left_right_arrow: net calculator written in Swift.
 Prebuilt copies can be downloaded from the project [releases page](https://github.com/balazs630/Gross-Net-Calculator/releases).
 
 ___
+**Done:**
+
 - [x] Convert Gross<->Net on keypress and calculate the vat
 - [x] Settings window for vatrate and currency
 - [x] Read/write vatrate and currency using UserDefaults
