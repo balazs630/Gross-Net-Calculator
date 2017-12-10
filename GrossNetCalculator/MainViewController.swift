@@ -18,13 +18,13 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var lblCurrency2: NSTextField!
     @IBOutlet weak var lblCurrency3: NSTextField!
 
-    var activeTextField: String = "gross"
+    var activeTextField: String = Key.gross
     var defaults: UserDefaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
     let maxDigits = 9
 
     var vatRateMultiplier: Double {
-        return 1 + defaults.double(forKey: "vatRate") / 100
+        return 1 + defaults.double(forKey: UserDefaultsKeys.vatRate) / 100
     }
 
     override func viewDidLoad() {
@@ -33,11 +33,13 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateCurrencyLblValues),
-                                               name: NotificationIdentifier.updateCurrencyLabels, object: nil)
+                                               name: NotificationIdentifier.updateCurrencyLabels,
+                                               object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTxtValues),
-                                               name: NotificationIdentifier.updateTextFields, object: nil)
+                                               name: NotificationIdentifier.updateTextFields,
+                                               object: nil)
     }
 
     override func viewDidAppear() {
@@ -81,9 +83,9 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     override func controlTextDidBeginEditing(_ notification: Notification) {
         // Called when textfield is clicked
         if notification.object as? NSTextField == self.txtGross {
-            activeTextField = "gross"
+            activeTextField = Key.gross
         } else if notification.object as? NSTextField == self.txtNet {
-            activeTextField = "net"
+            activeTextField = Key.net
         }
     }
 
@@ -102,7 +104,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
 
     @objc func updateCurrencyLblValues() {
         // Update the currency labels placed after the textfields if the currency was changed in Preferences
-        let currency: String = defaults.object(forKey: "currency") as! String
+        let currency: String = defaults.object(forKey: UserDefaultsKeys.currency) as! String
 
         lblCurrency1.stringValue = currency
         lblCurrency2.stringValue = currency
@@ -111,9 +113,9 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
 
     @objc func updateTxtValues() {
         // Update the calculations if the vatRate was changed in Preferences
-        if activeTextField == "gross" && txtGross.stringValue != "" {
+        if activeTextField == Key.gross && txtGross.stringValue != "" {
             grossToNetCalc()
-        } else if activeTextField == "net" && txtNet.stringValue != "" {
+        } else if activeTextField == Key.net && txtNet.stringValue != "" {
             netToGrossCalc()
         }
     }

@@ -8,11 +8,6 @@
 
 import Cocoa
 
-struct NotificationIdentifier {
-    static let updateCurrencyLabels = NSNotification.Name("currencyLabelUpdaterNotification")
-    static let updateTextFields = NSNotification.Name("textfieldUpdaterNotification")
-}
-
 class PreferencesViewController: NSViewController {
 
     @IBOutlet weak var txtVatRate: NSTextField!
@@ -26,11 +21,11 @@ class PreferencesViewController: NSViewController {
     var choosenCurrency: String = ""
 
     var currency: String {
-        return defaults.string(forKey: "currency")!
+        return defaults.string(forKey: UserDefaultsKeys.currency)!
     }
 
     var vatRate: Double {
-        return defaults.double(forKey: "vatRate")
+        return defaults.double(forKey: UserDefaultsKeys.vatRate)
     }
 
     override func viewDidLoad() {
@@ -40,12 +35,12 @@ class PreferencesViewController: NSViewController {
 
     override func viewDidAppear() {
         switch currency {
-        case "Ft":
-            rbtnFt.state = NSControl.StateValue(rawValue: 1)
-        case "€":
-            rbtnEuro.state = NSControl.StateValue(rawValue: 1)
-        case "$":
-            rbtnDollar.state = NSControl.StateValue(rawValue: 1)
+        case CurrencySign.forint:
+            rbtnFt.state = NSControl.StateValue.on
+        case CurrencySign.euro:
+            rbtnEuro.state = NSControl.StateValue.on
+        case CurrencySign.dollar:
+            rbtnDollar.state = NSControl.StateValue.on
         default:
             NSLog("Unexpected currency was selected")
         }
@@ -67,14 +62,14 @@ class PreferencesViewController: NSViewController {
 
         // If changed the vat value in textfield
         if enteredVatValue != vatRate {
-            defaults.set(txtVatRate.stringValue, forKey: "vatRate")
+            defaults.set(txtVatRate.stringValue, forKey: UserDefaultsKeys.vatRate)
             NotificationCenter.default.post(name: NotificationIdentifier.updateTextFields, object: nil)
             defaults.synchronize()
         }
 
         // If changed the radio button selection
         if choosenCurrency != currency {
-            defaults.set(choosenCurrency, forKey: "currency")
+            defaults.set(choosenCurrency, forKey: UserDefaultsKeys.currency)
             NotificationCenter.default.post(name: NotificationIdentifier.updateCurrencyLabels, object: nil)
             defaults.synchronize()
         }
