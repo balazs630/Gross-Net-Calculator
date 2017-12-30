@@ -18,13 +18,13 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var lblCurrency2: NSTextField!
     @IBOutlet weak var lblCurrency3: NSTextField!
 
-    var activeTextField: String = Key.gross
-    var defaults: UserDefaults = UserDefaults.standard
+    var activeTextField = Key.gross
+    let defaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
     let maxDigits = 9
 
     var vatRateMultiplier: Double {
-        return 1 + defaults.double(forKey: UserDefaultsKeys.vatRate) / 100
+        return 1 + defaults.double(forKey: UserDefaults.Key.vatRate) / 100
     }
 
     override func viewDidLoad() {
@@ -104,7 +104,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
 
     @objc func updateCurrencyLblValues() {
         // Update the currency labels placed after the textfields if the currency was changed in Preferences
-        let currency: String = defaults.object(forKey: UserDefaultsKeys.currency) as! String
+        guard let currency = defaults.string(forKey: UserDefaults.Key.currency) else { return }
 
         lblCurrency1.stringValue = currency
         lblCurrency2.stringValue = currency

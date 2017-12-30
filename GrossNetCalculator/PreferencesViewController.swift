@@ -16,16 +16,16 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var rbtnEuro: NSButton!
     @IBOutlet weak var rbtnDollar: NSButton!
 
-    var defaults: UserDefaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
     let numberValueFormatter = NumberValueFormatter()
-    var choosenCurrency: String = ""
+    var choosenCurrency = ""
 
     var currency: String {
-        return defaults.string(forKey: UserDefaultsKeys.currency)!
+        return defaults.string(forKey: UserDefaults.Key.currency)!
     }
 
     var vatRate: Double {
-        return defaults.double(forKey: UserDefaultsKeys.vatRate)
+        return defaults.double(forKey: UserDefaults.Key.vatRate)
     }
 
     override func viewDidLoad() {
@@ -62,14 +62,14 @@ class PreferencesViewController: NSViewController {
 
         // If changed the vat value in textfield
         if enteredVatValue != vatRate {
-            defaults.set(txtVatRate.stringValue, forKey: UserDefaultsKeys.vatRate)
+            defaults.set(txtVatRate.stringValue, forKey: UserDefaults.Key.vatRate)
             NotificationCenter.default.post(name: NotificationIdentifier.updateTextFields, object: nil)
             defaults.synchronize()
         }
 
         // If changed the radio button selection
         if choosenCurrency != currency {
-            defaults.set(choosenCurrency, forKey: UserDefaultsKeys.currency)
+            defaults.set(choosenCurrency, forKey: UserDefaults.Key.currency)
             NotificationCenter.default.post(name: NotificationIdentifier.updateCurrencyLabels, object: nil)
             defaults.synchronize()
         }

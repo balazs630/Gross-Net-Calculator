@@ -19,10 +19,12 @@ struct CurrencySign {
     static let euro = "€"
 }
 
-struct UserDefaultsKeys {
-    static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
-    static let vatRate = "vatRate"
-    static let currency = "currency"
+extension UserDefaults {
+    struct Key {
+        static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
+        static let vatRate = "vatRate"
+        static let currency = "currency"
+    }
 }
 
 struct NotificationIdentifier {

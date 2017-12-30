@@ -20,13 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let defaults = UserDefaults.standard
         
-        if defaults.object(forKey: UserDefaultsKeys.isAppAlreadyLaunchedOnce) == nil {
+        if defaults.object(forKey: UserDefaults.Key.isAppAlreadyLaunchedOnce) == nil {
             // First launch
             
             let firstTimeLaunchDefaults: [String : Any] = [
-                UserDefaultsKeys.isAppAlreadyLaunchedOnce: true,
-                UserDefaultsKeys.vatRate: 27,
-                UserDefaultsKeys.currency: CurrencySign.forint
+                UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
+                UserDefaults.Key.vatRate: 27,
+                UserDefaults.Key.currency: CurrencySign.forint
             ]
             
             for item in firstTimeLaunchDefaults {
