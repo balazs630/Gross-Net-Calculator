@@ -10,32 +10,29 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-    
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        
         let defaults = UserDefaults.standard
-        
+
         if defaults.object(forKey: UserDefaults.Key.isAppAlreadyLaunchedOnce) == nil {
             // First launch
-            
-            let firstTimeLaunchDefaults: [String : Any] = [
+
+            let firstTimeLaunchDefaults: [String: Any] = [
                 UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
                 UserDefaults.Key.vatRate: 27,
                 UserDefaults.Key.currency: CurrencySign.forint
             ]
-            
+
             for item in firstTimeLaunchDefaults {
                 defaults.set(item.value, forKey: item.key)
             }
-            
+
             defaults.synchronize()
         }
-        
     }
-    
+
 }

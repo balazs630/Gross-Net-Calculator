@@ -31,4 +31,3 @@ struct NotificationIdentifier {
     static let updateCurrencyLabels = NSNotification.Name("currencyLabelUpdaterNotification")
     static let updateTextFields = NSNotification.Name("textfieldUpdaterNotification")
 }
-
