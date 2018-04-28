@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  CalculatorViewController.swift
 //  GrossNetCalculator
 //
 //  Created by Horváth Balázs on 2016. 10. 18..
@@ -8,16 +8,9 @@
 
 import Cocoa
 
-class MainViewController: NSViewController, NSTextFieldDelegate {
+class CalculatorViewController: NSViewController {
 
-    @IBOutlet weak var txtGross: NSTextField!
-    @IBOutlet weak var txtNet: NSTextField!
-    @IBOutlet weak var txtVat: NSTextField!
-
-    @IBOutlet weak var lblCurrency1: NSTextField!
-    @IBOutlet weak var lblCurrency2: NSTextField!
-    @IBOutlet weak var lblCurrency3: NSTextField!
-
+    // MARK: Properties
     var activeTextField = Key.gross
     let defaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
@@ -27,6 +20,16 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         return 1 + defaults.double(forKey: UserDefaults.Key.vatRate) / 100
     }
 
+    // MARK: Outlets
+    @IBOutlet weak var txtGross: NSTextField!
+    @IBOutlet weak var txtNet: NSTextField!
+    @IBOutlet weak var txtVat: NSTextField!
+
+    @IBOutlet weak var lblCurrency1: NSTextField!
+    @IBOutlet weak var lblCurrency2: NSTextField!
+    @IBOutlet weak var lblCurrency3: NSTextField!
+
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +55,11 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         view.window!.styleMask.remove(NSWindow.StyleMask.resizable)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Calculations
     func grossToNetCalc() {
         txtGross.stringValue = txtGross.stringValue.filterNumbers(upto: maxDigits)
         txtNet.doubleValue = (txtGross.doubleValue / vatRateMultiplier).rounded()
@@ -68,6 +76,29 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         txtVat.doubleValue = txtGross.doubleValue - txtNet.doubleValue
     }
 
+    // MARK: - NotificationCenter actions
+    @objc func updateCurrencyLblValues() {
+        // Update the currency labels placed after the textfields if the currency was changed in Preferences
+        guard let currency = defaults.string(forKey: UserDefaults.Key.currency) else { return }
+
+        lblCurrency1.stringValue = currency
+        lblCurrency2.stringValue = currency
+        lblCurrency3.stringValue = currency
+    }
+
+    @objc func updateTxtValues() {
+        // Update the calculations if the vatRate was changed in Preferences
+        if activeTextField == Key.gross && txtGross.stringValue != "" {
+            grossToNetCalc()
+        } else if activeTextField == Key.net && txtNet.stringValue != "" {
+            netToGrossCalc()
+        }
+    }
+
+}
+
+// MARK: - TextField change methods
+extension CalculatorViewController: NSTextFieldDelegate {
     override func controlTextDidChange(_ notification: Notification) {
         // Called on every textfield change
         if notification.object as? NSTextField == self.txtGross {
@@ -89,7 +120,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     }
 
     private func deselectTextFieldContent() {
-        // Simulate Right Arrow keypress
+        // HACK: Simulate Right Arrow keypress
         let NSKeyCodeRightArrow: UInt16 = 124
 
         let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: NSKeyCodeRightArrow, keyDown: true)
@@ -100,23 +131,4 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         keyUpEvent?.flags = CGEventFlags.maskCommand
         keyUpEvent?.post(tap: CGEventTapLocation.cghidEventTap)
     }
-
-    @objc func updateCurrencyLblValues() {
-        // Update the currency labels placed after the textfields if the currency was changed in Preferences
-        guard let currency = defaults.string(forKey: UserDefaults.Key.currency) else { return }
-
-        lblCurrency1.stringValue = currency
-        lblCurrency2.stringValue = currency
-        lblCurrency3.stringValue = currency
-    }
-
-    @objc func updateTxtValues() {
-        // Update the calculations if the vatRate was changed in Preferences
-        if activeTextField == Key.gross && txtGross.stringValue != "" {
-            grossToNetCalc()
-        } else if activeTextField == Key.net && txtNet.stringValue != "" {
-            netToGrossCalc()
-        }
-    }
-
 }

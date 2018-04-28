@@ -9,6 +9,17 @@ import Foundation
 
 class NumberValueFormatter: NumberFormatter {
 
+    // MARK: - View lifecycle
+    override init() {
+        super.init()
+        self.numberStyle = .decimal
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: Formatter configuration
     override func isPartialStringValid(_ partialString: String,
                                        newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?,
                                        errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
@@ -17,15 +28,6 @@ class NumberValueFormatter: NumberFormatter {
         }
 
         return Double(partialString) != nil
-    }
-
-    override init() {
-        super.init()
-        self.numberStyle = .decimal
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
 }

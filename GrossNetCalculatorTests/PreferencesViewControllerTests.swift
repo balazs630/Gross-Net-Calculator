@@ -11,17 +11,17 @@ import XCTest
 @testable import Gross_Net_Calculator
 class PreferencesViewControllerTests: XCTestCase {
 
-    // system under test
+    // System under test
     var sut: PreferencesViewController!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name.main, bundle: nil)
+        sut = storyboard.instantiateController(withIdentifier:
+            NSStoryboard.SceneIdentifier.preferencesVC) as? PreferencesViewController
 
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        sut = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PreferencesVC")) as! PreferencesViewController
         _ = sut.view
-
     }
 
     override func tearDown() {

@@ -7,27 +7,37 @@
 //
 
 import Foundation
+import AppKit
 
-struct Key {
+enum Key {
     static let gross = "gross"
     static let net = "net"
 }
 
-struct CurrencySign {
+enum CurrencySign {
     static let forint = "Ft"
     static let dollar = "$"
     static let euro = "€"
 }
 
 extension UserDefaults {
-    struct Key {
+    enum Key {
         static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
         static let vatRate = "vatRate"
         static let currency = "currency"
     }
 }
 
-struct NotificationIdentifier {
+enum NotificationIdentifier {
     static let updateCurrencyLabels = NSNotification.Name("currencyLabelUpdaterNotification")
     static let updateTextFields = NSNotification.Name("textfieldUpdaterNotification")
+}
+
+extension NSStoryboard.Name {
+    static let main = NSStoryboard.Name(rawValue: "Main")
+}
+
+extension NSStoryboard.SceneIdentifier {
+    static let calculatorVC = NSStoryboard.SceneIdentifier(rawValue: "CalculatorVC")
+    static let preferencesVC = NSStoryboard.SceneIdentifier(rawValue: "PreferencesVC")
 }

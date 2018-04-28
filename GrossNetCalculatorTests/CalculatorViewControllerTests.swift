@@ -1,5 +1,5 @@
 //
-//  MainViewControllerTests.swift
+//  CalculatorViewControllerTests.swift
 //  GrossNetCalculatorTests
 //
 //  Created by Horváth Balázs on 2017. 04. 01..
@@ -9,17 +9,18 @@
 import XCTest
 
 @testable import Gross_Net_Calculator
-class MainViewControllerTests: XCTestCase {
+class CalculatorViewControllerTests: XCTestCase {
 
-    // system under test
-    var sut: MainViewController!
+    // System under test
+    var sut: CalculatorViewController!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name.main, bundle: nil)
+        sut = storyboard.instantiateController(withIdentifier:
+            NSStoryboard.SceneIdentifier.calculatorVC) as? CalculatorViewController
 
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        sut = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "MainVC")) as! MainViewController
         _ = sut.view
     }
 
@@ -28,35 +29,35 @@ class MainViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testMainVC_ShouldNotBeNil() {
+    func testCalculatorVC_ShouldNotBeNil() {
         XCTAssertNotNil(sut)
     }
 
-    func testMainVC_WindowTitle() {
+    func testCalculatorVC_WindowTitle() {
         XCTAssertEqual(sut.title, "Gross-Net Calculator")
     }
 
-    func testMainVC_GrossToNetCalc() {
+    func testCalculatorVC_GrossToNetCalc() {
         sut.txtGross.intValue = 1270
         sut.grossToNetCalc()
         XCTAssertEqual(sut.txtNet.doubleValue, sut.txtGross.doubleValue / sut.vatRateMultiplier)
     }
 
-    func testMainVC_NetToGrossCalc() {
+    func testCalculatorVC_NetToGrossCalc() {
         sut.txtNet.intValue = 1000
         sut.netToGrossCalc()
         XCTAssertEqual(sut.txtGross.doubleValue, sut.txtNet.doubleValue * sut.vatRateMultiplier)
     }
 
-    func testMainVC_VatCalc() {
+    func testCalculatorVC_VatCalc() {
         sut.txtGross.intValue = 1270
         sut.txtNet.intValue = 1000
         sut.vatCalc()
         XCTAssertEqual(sut.txtVat.intValue, 270)
     }
 
-    func testMainVC_UpdateLabels() {
-        let currencyName = sut.defaults.object(forKey: "currency") as! String
+    func testCalculatorVC_UpdateLabels() {
+        guard let currencyName = sut.defaults.object(forKey: "currency") as? String else { return }
         sut.updateCurrencyLblValues()
         XCTAssertEqual(sut.lblCurrency1.stringValue, currencyName)
         XCTAssertEqual(sut.lblCurrency2.stringValue, currencyName)

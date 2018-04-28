@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1645471E90176F005857E3 /* MainViewControllerTests.swift */; };
+		AC1645481E90176F005857E3 /* CalculatorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1645471E90176F005857E3 /* CalculatorViewControllerTests.swift */; };
 		AC32CAE71FDDCBCD0087B46C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32CAE61FDDCBCD0087B46C /* Constants.swift */; };
 		AC4E190F1EA0183A000F6F4A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */; };
 		AC4E19111EA0197E000F6F4A /* PreferencesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E19101EA0197E000F6F4A /* PreferencesViewControllerTests.swift */; };
 		AC545F351F6F35790060EB4E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC545F341F6F35790060EB4E /* Extensions.swift */; };
 		AC6647221F6FE7B6001DF9A4 /* NumberValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6647211F6FE7B6001DF9A4 /* NumberValueFormatter.swift */; };
 		ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */; };
-		ACE7DCDE1DB621C6005D3E9F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */; };
+		ACE7DCDE1DB621C6005D3E9F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* CalculatorViewController.swift */; };
 		ACE7DCE01DB621C6005D3E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */; };
 		ACE7DCE31DB621C6005D3E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCE11DB621C6005D3E9F /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		AC1645451E90176F005857E3 /* GrossNetCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrossNetCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC1645471E90176F005857E3 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		AC1645471E90176F005857E3 /* CalculatorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewControllerTests.swift; sourceTree = "<group>"; };
 		AC1645491E90176F005857E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC32CAE61FDDCBCD0087B46C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		AC6647211F6FE7B6001DF9A4 /* NumberValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberValueFormatter.swift; sourceTree = "<group>"; };
 		ACE7DCD81DB621C5005D3E9F /* Gross-Net Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gross-Net Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ACE7DCDD1DB621C6005D3E9F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE7DCE41DB621C6005D3E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACFE21711E9A771500671862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		AC1645461E90176F005857E3 /* Gross-Net Calculator Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AC1645471E90176F005857E3 /* MainViewControllerTests.swift */,
+				AC1645471E90176F005857E3 /* CalculatorViewControllerTests.swift */,
 				AC4E19101EA0197E000F6F4A /* PreferencesViewControllerTests.swift */,
 				AC1645491E90176F005857E3 /* Info.plist */,
 			);
@@ -98,14 +98,14 @@
 		ACE7DCDA1DB621C5005D3E9F /* Gross-Net Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				ACE7DCDD1DB621C6005D3E9F /* MainViewController.swift */,
+				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
+				ACE7DCDD1DB621C6005D3E9F /* CalculatorViewController.swift */,
 				AC4E190E1EA0183A000F6F4A /* PreferencesViewController.swift */,
 				AC6647211F6FE7B6001DF9A4 /* NumberValueFormatter.swift */,
+				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
 				AC32CAE61FDDCBCD0087B46C /* Constants.swift */,
 				AC545F341F6F35790060EB4E /* Extensions.swift */,
-				ACE7DCDB1DB621C6005D3E9F /* AppDelegate.swift */,
 				ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */,
-				ACE7DCE11DB621C6005D3E9F /* Main.storyboard */,
 				ACE7DCE41DB621C6005D3E9F /* Info.plist */,
 			);
 			name = "Gross-Net Calculator";
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC1645481E90176F005857E3 /* MainViewControllerTests.swift in Sources */,
+				AC1645481E90176F005857E3 /* CalculatorViewControllerTests.swift in Sources */,
 				AC4E19111EA0197E000F6F4A /* PreferencesViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACE7DCDE1DB621C6005D3E9F /* MainViewController.swift in Sources */,
+				ACE7DCDE1DB621C6005D3E9F /* CalculatorViewController.swift in Sources */,
 				ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */,
 				AC4E190F1EA0183A000F6F4A /* PreferencesViewController.swift in Sources */,
 				AC6647221F6FE7B6001DF9A4 /* NumberValueFormatter.swift in Sources */,
@@ -425,7 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = GrossNetCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GrossNetCalculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
 				PRODUCT_NAME = "Gross-Net Calculator";
@@ -439,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = GrossNetCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GrossNetCalculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
 				PRODUCT_NAME = "Gross-Net Calculator";
