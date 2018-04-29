@@ -5,6 +5,7 @@
 //  Created by Horváth Balázs on 2017. 02. 21..
 //  Copyright © 2017. Horváth Balázs. All rights reserved.
 //
+
 import Foundation
 
 class NumberValueFormatter: NumberFormatter {

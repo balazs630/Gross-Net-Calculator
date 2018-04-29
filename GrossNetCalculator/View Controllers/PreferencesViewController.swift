@@ -62,6 +62,7 @@ class PreferencesViewController: NSViewController {
 
     private func configureVatRateTextField() {
         txtVatRate.doubleValue = vatRate
+
         numberValueFormatter.maximumFractionDigits = 2
         numberValueFormatter.decimalSeparator = "."
         txtVatRate.formatter = numberValueFormatter

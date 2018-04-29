@@ -47,12 +47,12 @@ class CalculatorViewController: NSViewController {
     override func viewDidAppear() {
         updateCurrencyLblValues()
 
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        numberFormatter.numberStyle = .decimal
         txtGross.formatter = numberFormatter
         txtNet.formatter = numberFormatter
         txtVat.formatter = numberFormatter
 
-        view.window!.styleMask.remove(NSWindow.StyleMask.resizable)
+        view.window!.styleMask.remove(.resizable)
     }
 
     deinit {
@@ -124,11 +124,11 @@ extension CalculatorViewController: NSTextFieldDelegate {
         let NSKeyCodeRightArrow: UInt16 = 124
 
         let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: NSKeyCodeRightArrow, keyDown: true)
-        keyDownEvent?.flags = CGEventFlags.maskCommand
-        keyDownEvent?.post(tap: CGEventTapLocation.cghidEventTap)
+        keyDownEvent?.flags = .maskCommand
+        keyDownEvent?.post(tap: .cghidEventTap)
 
         let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: NSKeyCodeRightArrow, keyDown: false)
-        keyUpEvent?.flags = CGEventFlags.maskCommand
-        keyUpEvent?.post(tap: CGEventTapLocation.cghidEventTap)
+        keyUpEvent?.flags = .maskCommand
+        keyUpEvent?.post(tap: .cghidEventTap)
     }
 }
