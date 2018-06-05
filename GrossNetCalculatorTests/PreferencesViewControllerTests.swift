@@ -29,15 +29,15 @@ class PreferencesViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPreferencesVC_ShouldNotBeNil() {
+    func testPreferencesVCShouldNotBeNil() {
         XCTAssertNotNil(sut)
     }
 
-    func testPreferencesVC_WindowTitle() {
+    func testPreferencesVCWindowTitle() {
         XCTAssertEqual(sut.title, "Preferences")
     }
 
-    func testPreferencesVC_OnlyOneRadioButtonStateShouldBeSelected() {
+    func testPreferencesVCOnlyOneRadioButtonStateShouldBeSelected() {
         var counter = 0
         var radioButtons = [NSButton]()
 

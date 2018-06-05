@@ -121,13 +121,13 @@ extension CalculatorViewController: NSTextFieldDelegate {
 
     private func deselectTextFieldContent() {
         // HACK: Simulate Right Arrow keypress
-        let NSKeyCodeRightArrow: UInt16 = 124
+        let rightArrowKeyCode: UInt16 = 124
 
-        let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: NSKeyCodeRightArrow, keyDown: true)
+        let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: rightArrowKeyCode, keyDown: true)
         keyDownEvent?.flags = .maskCommand
         keyDownEvent?.post(tap: .cghidEventTap)
 
-        let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: NSKeyCodeRightArrow, keyDown: false)
+        let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: rightArrowKeyCode, keyDown: false)
         keyUpEvent?.flags = .maskCommand
         keyUpEvent?.post(tap: .cghidEventTap)
     }

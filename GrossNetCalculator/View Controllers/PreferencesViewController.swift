@@ -90,10 +90,10 @@ class PreferencesViewController: NSViewController {
     }
 
     private func vatTextFieldDidChange () -> Bool {
-        return txtVatRate.doubleValue != vatRate ? true : false
+        return txtVatRate.doubleValue != vatRate
     }
 
     private func radioButtonStateDidChange () -> Bool {
-        return choosenCurrency != currency ? true : false
+        return choosenCurrency != currency
     }
 }

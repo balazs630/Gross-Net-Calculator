@@ -29,34 +29,34 @@ class CalculatorViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testCalculatorVC_ShouldNotBeNil() {
+    func testCalculatorVCShouldNotBeNil() {
         XCTAssertNotNil(sut)
     }
 
-    func testCalculatorVC_WindowTitle() {
+    func testCalculatorVCWindowTitle() {
         XCTAssertEqual(sut.title, "Gross-Net Calculator")
     }
 
-    func testCalculatorVC_GrossToNetCalc() {
+    func testCalculatorVCGrossToNetCalc() {
         sut.txtGross.intValue = 1270
         sut.grossToNetCalc()
         XCTAssertEqual(sut.txtNet.doubleValue, sut.txtGross.doubleValue / sut.vatRateMultiplier)
     }
 
-    func testCalculatorVC_NetToGrossCalc() {
+    func testCalculatorVCNetToGrossCalc() {
         sut.txtNet.intValue = 1000
         sut.netToGrossCalc()
         XCTAssertEqual(sut.txtGross.doubleValue, sut.txtNet.doubleValue * sut.vatRateMultiplier)
     }
 
-    func testCalculatorVC_VatCalc() {
+    func testCalculatorVCVatCalc() {
         sut.txtGross.intValue = 1270
         sut.txtNet.intValue = 1000
         sut.vatCalc()
         XCTAssertEqual(sut.txtVat.intValue, 270)
     }
 
-    func testCalculatorVC_UpdateLabels() {
+    func testCalculatorVCUpdateLabels() {
         guard let currencyName = sut.defaults.object(forKey: "currency") as? String else { return }
         sut.updateCurrencyLblValues()
         XCTAssertEqual(sut.lblCurrency1.stringValue, currencyName)
