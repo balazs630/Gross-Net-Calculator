@@ -19,6 +19,5 @@ public extension String {
         } else {
             return filtered
         }
-
     }
 }

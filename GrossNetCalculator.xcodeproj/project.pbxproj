@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		ACE7DCDE1DB621C6005D3E9F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7DCDD1DB621C6005D3E9F /* CalculatorViewController.swift */; };
 		ACE7DCE01DB621C6005D3E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCDF1DB621C6005D3E9F /* Assets.xcassets */; };
 		ACE7DCE31DB621C6005D3E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE7DCE11DB621C6005D3E9F /* Main.storyboard */; };
+		ACFEBC77217278DA00572F6D /* NSTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC76217278DA00572F6D /* NSTextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		ACFE21711E9A771500671862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACFE21731E9A775E00671862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		ACFE21741E9A778E00671862 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Main.strings; sourceTree = "<group>"; };
+		ACFEBC76217278DA00572F6D /* NSTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				AC545F341F6F35790060EB4E /* StringExtensions.swift */,
+				ACFEBC76217278DA00572F6D /* NSTextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,12 +229,11 @@
 					ACE7DCD71DB621C5005D3E9F = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = ACE7DCD31DB621C5005D3E9F /* Build configuration list for PBXProject "GrossNetCalculator" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -299,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFEBC77217278DA00572F6D /* NSTextFieldExtension.swift in Sources */,
 				ACE7DCDE1DB621C6005D3E9F /* CalculatorViewController.swift in Sources */,
 				ACE7DCDC1DB621C6005D3E9F /* AppDelegate.swift in Sources */,
 				AC4E190F1EA0183A000F6F4A /* PreferencesViewController.swift in Sources */,
@@ -339,11 +342,15 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "GrossNetCalculatorTests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gross-Net Calculator.app/Contents/MacOS/Gross-Net Calculator";
 			};
 			name = Debug;
@@ -355,11 +362,15 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "GrossNetCalculatorTests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gross-Net Calculator.app/Contents/MacOS/Gross-Net Calculator";
 			};
 			name = Release;
@@ -471,7 +482,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 			};
 			name = Release;
@@ -480,13 +492,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UW8QF9DSWQ;
 				INFOPLIST_FILE = "$(SRCROOT)/GrossNetCalculator/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
 				PRODUCT_NAME = "Gross-Net Calculator";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -494,13 +513,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UW8QF9DSWQ;
 				INFOPLIST_FILE = "$(SRCROOT)/GrossNetCalculator/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.GrossNetCalculator;
 				PRODUCT_NAME = "Gross-Net Calculator";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

@@ -10,7 +10,6 @@ import XCTest
 
 @testable import Gross_Net_Calculator
 class CalculatorViewControllerTests: XCTestCase {
-
     // System under test
     var sut: CalculatorViewController!
 
@@ -63,5 +62,4 @@ class CalculatorViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.lblCurrency2.stringValue, currencyName)
         XCTAssertEqual(sut.lblCurrency3.stringValue, currencyName)
     }
-
 }

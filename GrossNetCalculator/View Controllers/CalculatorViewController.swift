@@ -9,12 +9,10 @@
 import Cocoa
 
 class CalculatorViewController: NSViewController {
-
     // MARK: Properties
     var activeTextField = Key.gross
     let defaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
-    let maxDigits = 9
 
     var vatRateMultiplier: Double {
         return 1 + defaults.double(forKey: UserDefaults.Key.vatRate) / 100
@@ -32,21 +30,22 @@ class CalculatorViewController: NSViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateCurrencyLblValues),
-                                               name: NotificationIdentifier.updateCurrencyLabels,
-                                               object: nil)
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateTxtValues),
-                                               name: NotificationIdentifier.updateTextFields,
-                                               object: nil)
+        addNotificationCenterObservers()
     }
 
     override func viewDidAppear() {
+        configureSelf()
         updateCurrencyLblValues()
+    }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+// MARK: - Screen configuration
+extension CalculatorViewController {
+    private func configureSelf() {
         numberFormatter.numberStyle = .decimal
         txtGross.formatter = numberFormatter
         txtNet.formatter = numberFormatter
@@ -54,21 +53,21 @@ class CalculatorViewController: NSViewController {
 
         view.window!.styleMask.remove(.resizable)
     }
+}
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    // MARK: - Calculations
+// MARK: - Calculations
+extension CalculatorViewController {
     func grossToNetCalc() {
-        txtGross.stringValue = txtGross.stringValue.filterNumbers(upto: maxDigits)
+        txtGross.stringValue = txtGross.stringValue.filterNumbers(upto: Constants.maxNumberOfTextFieldDigits)
         txtNet.doubleValue = (txtGross.doubleValue / vatRateMultiplier).rounded()
+        txtGross.moveCursorToEnd()
         vatCalc()
     }
 
     func netToGrossCalc() {
-        txtNet.stringValue = txtNet.stringValue.filterNumbers(upto: maxDigits)
+        txtNet.stringValue = txtNet.stringValue.filterNumbers(upto: Constants.maxNumberOfTextFieldDigits)
         txtGross.doubleValue = (txtNet.doubleValue * vatRateMultiplier).rounded()
+        txtNet.moveCursorToEnd()
         vatCalc()
     }
 
@@ -94,23 +93,26 @@ class CalculatorViewController: NSViewController {
             netToGrossCalc()
         }
     }
-
 }
 
-// MARK: - TextField change methods
-extension CalculatorViewController: NSTextFieldDelegate {
-    override func controlTextDidChange(_ notification: Notification) {
-        // Called on every textfield change
-        if notification.object as? NSTextField == self.txtGross {
-            grossToNetCalc()
-        } else if notification.object as? NSTextField == self.txtNet {
-            netToGrossCalc()
-        }
-        // If the whole text is selected, a new keypress would remove the text in the textfield
-        deselectTextFieldContent()
-    }
+// MARK: NotificationCenter
+extension CalculatorViewController {
+    private func addNotificationCenterObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateCurrencyLblValues),
+                                               name: NotificationIdentifier.updateCurrencyLabels,
+                                               object: nil)
 
-    override func controlTextDidBeginEditing(_ notification: Notification) {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateTxtValues),
+                                               name: NotificationIdentifier.updateTextFields,
+                                               object: nil)
+    }
+}
+
+// MARK: - NSTextFieldDelegate methods
+extension CalculatorViewController: NSTextFieldDelegate {
+    func controlTextDidBeginEditing(_ notification: Notification) {
         // Called when textfield is clicked
         if notification.object as? NSTextField == self.txtGross {
             activeTextField = Key.gross
@@ -119,16 +121,12 @@ extension CalculatorViewController: NSTextFieldDelegate {
         }
     }
 
-    private func deselectTextFieldContent() {
-        // HACK: Simulate Right Arrow keypress
-        let rightArrowKeyCode: UInt16 = 124
-
-        let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: rightArrowKeyCode, keyDown: true)
-        keyDownEvent?.flags = .maskCommand
-        keyDownEvent?.post(tap: .cghidEventTap)
-
-        let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: rightArrowKeyCode, keyDown: false)
-        keyUpEvent?.flags = .maskCommand
-        keyUpEvent?.post(tap: .cghidEventTap)
+    func controlTextDidChange(_ notification: Notification) {
+        // Called on every textfield change
+        if activeTextField == Key.gross {
+            grossToNetCalc()
+        } else if activeTextField == Key.net {
+            netToGrossCalc()
+        }
     }
 }

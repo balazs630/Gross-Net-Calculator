@@ -32,10 +32,6 @@ class PreferencesViewController: NSViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-    }
-
-    override func viewDidAppear() {
         setUpView()
     }
 
@@ -46,13 +42,15 @@ class PreferencesViewController: NSViewController {
     }
 
     private func configureRadioButtons() {
+        let onState = NSControl.StateValue.on
+
         switch currency {
         case CurrencySign.forint:
-            rbtnFt.state = NSControl.StateValue.on
+            rbtnFt.state = onState
         case CurrencySign.euro:
-            rbtnEuro.state = NSControl.StateValue.on
+            rbtnEuro.state = onState
         case CurrencySign.dollar:
-            rbtnDollar.state = NSControl.StateValue.on
+            rbtnDollar.state = onState
         default:
             NSLog("Unexpected currency was selected")
         }
@@ -74,26 +72,25 @@ class PreferencesViewController: NSViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        if vatTextFieldDidChange() {
-            defaults.set(txtVatRate.stringValue, forKey: UserDefaults.Key.vatRate)
-            NotificationCenter.default.post(name: NotificationIdentifier.updateTextFields, object: nil)
-            defaults.synchronize()
-        }
-
-        if radioButtonStateDidChange() {
-            defaults.set(choosenCurrency, forKey: UserDefaults.Key.currency)
-            NotificationCenter.default.post(name: NotificationIdentifier.updateCurrencyLabels, object: nil)
-            defaults.synchronize()
-        }
+        handleVatTextFieldChanges()
+        handleRadioButtonStateChanges()
 
         self.view.window?.close()
     }
 
-    private func vatTextFieldDidChange () -> Bool {
-        return txtVatRate.doubleValue != vatRate
+    private func handleVatTextFieldChanges() {
+        if txtVatRate.doubleValue != vatRate {
+            defaults.set(txtVatRate.stringValue, forKey: UserDefaults.Key.vatRate)
+            NotificationCenter.default.post(name: NotificationIdentifier.updateTextFields, object: nil)
+            defaults.synchronize()
+        }
     }
 
-    private func radioButtonStateDidChange () -> Bool {
-        return choosenCurrency != currency
+    private func handleRadioButtonStateChanges () {
+        if choosenCurrency != currency {
+            defaults.set(choosenCurrency, forKey: UserDefaults.Key.currency)
+            NotificationCenter.default.post(name: NotificationIdentifier.updateCurrencyLabels, object: nil)
+            defaults.synchronize()
+        }
     }
 }

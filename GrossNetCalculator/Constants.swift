@@ -8,6 +8,10 @@
 
 import AppKit
 
+struct Constants {
+    static let maxNumberOfTextFieldDigits = 9
+}
+
 enum Key {
     static let gross = "gross"
     static let net = "net"
@@ -33,10 +37,10 @@ enum NotificationIdentifier {
 }
 
 extension NSStoryboard.Name {
-    static let main = NSStoryboard.Name(rawValue: "Main")
+    static let main = NSStoryboard.Name("Main")
 }
 
 extension NSStoryboard.SceneIdentifier {
-    static let calculatorVC = NSStoryboard.SceneIdentifier(rawValue: "CalculatorVC")
-    static let preferencesVC = NSStoryboard.SceneIdentifier(rawValue: "PreferencesVC")
+    static let calculatorVC = NSStoryboard.SceneIdentifier("CalculatorVC")
+    static let preferencesVC = NSStoryboard.SceneIdentifier("PreferencesVC")
 }

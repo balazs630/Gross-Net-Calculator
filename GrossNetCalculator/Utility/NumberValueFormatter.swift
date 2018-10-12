@@ -9,15 +9,18 @@
 import Foundation
 
 class NumberValueFormatter: NumberFormatter {
-
     // MARK: - View lifecycle
     override init() {
         super.init()
-        self.numberStyle = .decimal
+        configureSelf()
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+
+    private func configureSelf() {
+        self.numberStyle = .decimal
     }
 
     // MARK: Formatter configuration
@@ -30,5 +33,4 @@ class NumberValueFormatter: NumberFormatter {
 
         return Double(partialString) != nil
     }
-
 }

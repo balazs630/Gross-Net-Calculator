@@ -10,7 +10,6 @@ import XCTest
 
 @testable import Gross_Net_Calculator
 class PreferencesViewControllerTests: XCTestCase {
-
     // System under test
     var sut: PreferencesViewController!
 
@@ -45,11 +44,10 @@ class PreferencesViewControllerTests: XCTestCase {
         radioButtons.append(sut.rbtnEuro)
         radioButtons.append(sut.rbtnDollar)
 
-        for radiobutton in radioButtons where radiobutton.state.rawValue == 1 {
-            counter += 1
-        }
+        radioButtons
+            .filter { $0.state.rawValue == 1 }
+            .forEach { _ in counter += 1 }
 
         XCTAssertEqual(counter, 1)
     }
-
 }
